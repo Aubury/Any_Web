@@ -1,3 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .color{
     color: red;
+}
+.slid{
+    width: 100vw;
+    /*height: 100vh;*/
+}
+.slid1{
+    background-color: #000068;
+}
+.slid2{
+    background-color: rgba(67, 61, 154, 0.41);
+}
+.slid3{
+    background-color: #7df0c8;
+
 }

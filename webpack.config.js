@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 
 
 module.exports = {
@@ -19,6 +20,11 @@ module.exports = {
     devtool: 'inline-source-map',
     devServer: {
         contentBase: './dist',
+    },
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
     },
     module: {
         rules: [
@@ -56,12 +62,14 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin(),
+        // new HtmlWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: 'Any Web',
             filename: 'index.html',
             template: 'src/html/index.html',
-            inject: "body"
+            inject: true,
+            inlineSource: '.(js|css)$' // embed all javascript and css inline
         }),
+        new HtmlWebpackInlineSourcePlugin(),
       ]
 }
