@@ -39,6 +39,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\Any_Web\src\app\slides" />
       <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\Any_Web" />
     </key>
   </component>
@@ -97,9 +98,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.clear" />
-        <item itemvalue="npm.start" />
         <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
@@ -117,7 +118,9 @@
       <workItem from="1577550134524" duration="1406000" />
       <workItem from="1577552066334" duration="2443000" />
       <workItem from="1577560875560" duration="3694000" />
-      <workItem from="1577619475267" duration="10802000" />
+      <workItem from="1577619475267" duration="19463000" />
+      <workItem from="1577705663291" duration="29063000" />
+      <workItem from="1577778557708" duration="684000" />
     </task>
     <servers />
   </component>
