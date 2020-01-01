@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 
-
 module.exports = {
     entry: {
         index: './src/app/index.js',
@@ -39,9 +38,12 @@ module.exports = {
             {
                 test: /\.(png|svg|jpg|gif)$/,
                 include: path.resolve(__dirname, 'src/img'),
-                use: [
-                    'file-loader',
-                ],
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: 'img/[name].[ext]'
+                    }
+                },
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
