@@ -17,110 +17,11 @@
 .none{
      display: none;
  }
-/*!*-----------------------Slider---------------------------------------------------*!*/
-/*.slid{*/
-/*    width: 100vw !important;*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    left:0;*/
-/*    font-size: 10em;*/
-/*}*/
 
-/*.slid1{*/
-/*    background-color: #000068;*/
-/*    color: aliceblue;*/
-/*}*/
-/*.slid2{*/
-/*    background-color: rgba(67, 61, 154, 1);*/
-/*}*/
-/*.slid3{*/
-/*    background-color: #7df0c8;*/
-
-/*}*/
-/*.container {*/
-/*    height: 100vh !important;*/
-/*    position: relative;*/
-/*    overflow: hidden;*/
-/*}*/
-/*@keyframes slidDown{*/
-/*    0%{*/
-/*        top: 0;*/
-/*    }*/
-/*    40%{*/
-/*        top:40vh;*/
-/*    }*/
-/*    60%{*/
-/*        top:40vh;*/
-/*    }*/
-
-/*    100% {*/
-/*        top:100vh;*/
-/*    }*/
-/*}*/
-/*@keyframes slidUp{*/
-/*    from {*/
-/*        top: 100vh;*/
-/*    }*/
-/*    100% {*/
-/*        top:0;*/
-/*    }*/
-/*}*/
-/*.down{*/
-/*    top: 100vh;*/
-/*    animation: 2s ease-in-out slidDown;*/
-/*}*/
-/*.up{*/
-/*    top: 0;*/
-/*    animation: 1s ease-in-out slidUp;*/
-/*}*/
-/*.show {*/
-/*    z-index: 9;*/
-/*    position: fixed;*/
-
-/*}*/
-/*!*----------------------------Arrow------------------------------------------------------*!*/
-/*.divArrowUP{*/
-/*    position: fixed;*/
-/*    width: 3em;*/
-/*    height: 3em;*/
-/*    padding: 2px 2px 8px 2px !important;*/
-/*    top:.5em;*/
-/*    left: calc((100vw/2) - (3em/2));*/
-/*    background-color: rgba(240, 248, 255, 0.4);*/
-/*    border-radius: 50%;*/
-/*    z-index: 99;*/
-/*    outline:none;*/
-/*}*/
-/*.divArrowDown{*/
-/*    position: fixed;*/
-/*    width: 3em;*/
-/*    height: 3em;*/
-/*    padding: 8px 2px 2px 2px !important;*/
-/*    top: calc(100vh - (3em + .5em));*/
-/*    left: calc((100vw/2) - (3em/2));*/
-/*    background-color: rgba(240, 248, 255, 0.4);*/
-/*    border-radius: 50%;*/
-/*    z-index: 99;*/
-/*    outline:none;*/
-
-
-/*}*/
-/*.divArrowDown img{*/
-/*    height: 80%;*/
-/*    width: 80%;*/
-/*    transform: rotate(180deg);*/
-/*}*/
-/*.divArrowUP img{*/
-/*    height: 80%;*/
-/*    width: 80%;*/
-/*}*/
-/*.divArrowDown:hover,*/
-/*.divArrowUP:hover{*/
-/*    cursor: pointer;*/
-/*    width: 3.5em;*/
-/*    height: 3.5em;*/
-/*    background-color: rgba(240, 248, 255, 0.5);*/
-/*}*/
 /*-----------------------------------------------------------------------------------------------*/
-
+@media screen and (max-width: 600px) {
+    .slid{
+        font-size: 5em !important;
+    }
+}
 
