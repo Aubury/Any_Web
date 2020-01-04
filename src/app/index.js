@@ -22,13 +22,15 @@ function sliderContainer(){
 
 //------------------------------------------------------------------------------------
 function sliderGoUp(item) {
-    const arrowUp =  document.querySelector('.divArrowUP');
+    const arrowUp =  document.querySelector('.divArrowUP'),
+        arrowDown =document.querySelector('.divArrowDown');
+
     if (item.classList.contains('show')) {
-        if (item.nextElementSibling) {
+        if (item.nextElementSibling && item.nextElementSibling !== arrowUp) {
             item.classList.remove('show', 'up');
             item.nextElementSibling.classList.remove('down');
             item.nextElementSibling.classList.add('show', 'up');
-
+            arrowDown.classList.remove('none');
         }else {
             arrowUp.classList.add('none');
         }
@@ -38,9 +40,10 @@ function sliderGoUp(item) {
 }
 //-----------------------------------------------------------------------------------
 function sliderGoDown(item) {
-    const arrowUp =  document.querySelector('.divArrowUP');
+    const arrowUp =  document.querySelector('.divArrowUP'),
+        arrowDown = document.querySelector('.divArrowDown');
     if(item.classList.contains('show')) {
-        if (item.previousElementSibling) {
+        if (item.previousElementSibling && item.previousElementSibling !== arrowDown) {
             arrowUp.classList.remove('none');
             item.classList.remove('show', 'up');
             item.classList.add('down');
@@ -49,7 +52,7 @@ function sliderGoDown(item) {
             }, 2000);
 
         }else {
-            arrowUp.classList.add('none');
+            arrowDown.classList.add('none');
         }
 
       return true;
@@ -62,6 +65,7 @@ function arrowButtons() {
 
     const divArrowUp = document.createElement('div'),
           divArrowDown = document.createElement('div'),
+          cont = document.querySelector('.container'),
           ArrowUp = new Image(),
           ArrowDown = new Image();
 
@@ -70,16 +74,13 @@ function arrowButtons() {
     divArrowUp.classList.add('divArrowUP', 'displayCenter', 'none');
     divArrowUp.appendChild(ArrowUp);
 
-
     ArrowDown.src = Arrow;
     ArrowDown.alt = 'arrowDown';
     divArrowDown.classList.add('divArrowDown', 'displayCenter');
     divArrowDown.appendChild(ArrowDown);
 
-
-
-    document.body.appendChild(divArrowUp);
-    document.body.appendChild(divArrowDown);
+    cont.appendChild(divArrowUp);
+    cont.appendChild(divArrowDown);
     ArrowUp.addEventListener('click',clickUpArrow);
     ArrowDown.addEventListener('click',clickDownArrow);
 }

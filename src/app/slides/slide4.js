@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import slid1 from "./slide1";
 
 const slid4 = document.createElement('div');
 

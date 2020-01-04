@@ -19,6 +19,7 @@ module.exports = {
     devtool: 'inline-source-map',
     devServer: {
         contentBase: '/dist',
+        // port: 7700
     },
     performance: {
         hints: false,
@@ -41,7 +42,7 @@ module.exports = {
                 use: {
                     loader: 'file-loader',
                     options: {
-                        name: 'img/[name].[ext]',
+                        name: 'dist/img/[name].[ext]',
                         context: ''
                     }
                 },

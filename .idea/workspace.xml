@@ -16,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -57,7 +57,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.build">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -102,8 +102,8 @@
       <list>
         <item itemvalue="npm.build" />
         <item itemvalue="npm.clear" />
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -123,6 +123,11 @@
       <workItem from="1577619475267" duration="19463000" />
       <workItem from="1577705663291" duration="29063000" />
       <workItem from="1577778557708" duration="29999000" />
+      <workItem from="1577967598629" duration="19248000" />
+      <workItem from="1578071373378" duration="17127000" />
+      <workItem from="1578092284542" duration="406000" />
+      <workItem from="1578131719134" duration="178000" />
+      <workItem from="1578132080416" duration="3245000" />
     </task>
     <servers />
   </component>

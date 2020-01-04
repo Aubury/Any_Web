@@ -61,7 +61,7 @@
 }
 /*----------------------------Arrow------------------------------------------------------*/
 .divArrowUP{
-    position: fixed;
+    position: absolute;
     width: 3em;
     height: 3em;
     padding: 2px 2px 8px 2px !important;
@@ -73,11 +73,11 @@
     outline:none;
 }
 .divArrowDown{
-    position: fixed;
+    position: absolute;
     width: 3em;
     height: 3em;
     padding: 8px 2px 2px 2px !important;
-    top: calc(100vh - (3em + .5em));
+    top: calc(100% - (3em + 2em));
     left: calc((100vw/2) - (3em/2));
     background-color: rgba(240, 248, 255, 0.4);
     border-radius: 50%;
