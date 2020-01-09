@@ -30,7 +30,7 @@ function sliderGoUp(item) {
         arrowDown =document.querySelector('.divArrowDown');
 
     if (item.classList.contains('show')) {
-        if (item.nextElementSibling && item.nextElementSibling !== arrowUp) {
+        if (item.nextElementSibling && item.nextElementSibling !== arrowUp && item.nextElementSibling !== obj.menuButton) {
             item.classList.remove('show', 'up');
             item.nextElementSibling.classList.remove('down');
             item.nextElementSibling.classList.add('show', 'up');
@@ -47,7 +47,7 @@ function sliderGoDown(item) {
     const arrowUp =  document.querySelector('.divArrowUP'),
         arrowDown = document.querySelector('.divArrowDown');
     if(item.classList.contains('show')) {
-        if (item.previousElementSibling && item.previousElementSibling !== arrowDown) {
+        if (item.previousElementSibling && item.previousElementSibling !== arrowDown && item.previousElementSibling !== obj.menuButton) {
             arrowUp.classList.remove('none');
             item.classList.remove('show', 'up');
             item.classList.add('down');
