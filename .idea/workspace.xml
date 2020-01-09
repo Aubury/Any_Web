@@ -13,6 +13,9 @@
       <executable />
     </execution>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Any_Web" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -37,7 +40,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -129,6 +132,8 @@
       <workItem from="1578131719134" duration="178000" />
       <workItem from="1578132080416" duration="4049000" />
       <workItem from="1578253776544" duration="832000" />
+      <workItem from="1578318401055" duration="91000" />
+      <workItem from="1578547405766" duration="12321000" />
     </task>
     <servers />
   </component>

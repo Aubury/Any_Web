@@ -17,7 +17,25 @@
 .none{
      display: none;
  }
-
+/*----------------------------------------------------------------------------------------------*/
+.menu-btn {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 54px;
+    cursor: pointer;
+    background: url(https://iamturner.co.uk/codepen/menu-icon.png) no-repeat center;
+    background-size: 44px;
+}
+.menuOpen{
+    align-items: normal !important;
+    align-content: normal !important;
+    font-size: 4em !important;
+    border-radius: 8px 8px 0 0;
+    /*transition: transform 0.3s;*/
+}
 /*-----------------------------------------------------------------------------------------------*/
 @media screen and (max-width: 600px) {
     .slid{

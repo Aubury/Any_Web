@@ -6,18 +6,22 @@ import slid2 from "./slides/slide2";
 import slid3 from "./slides/slide3";
 import slid4 from "./slides/slide4";
 
+const obj = {
+    container : document.querySelector('.container'),
+    menuButton: document.querySelector('.menu-btn'),
+    massSlides: []
+}
 //------------------------------------------------------------------------------------
 function sliderContainer(){
 
-    const cont = document.createElement('div');
+    const cont = obj.container;
 
-    cont.classList.add('container');
     cont.appendChild(slid4);
     cont.appendChild(slid3);
     cont.appendChild(slid2);
     cont.appendChild(slid1);
 
-    document.body.appendChild(cont);
+    obj.massSlides = cont.querySelectorAll('.slid');
 }
 
 //------------------------------------------------------------------------------------
@@ -95,11 +99,11 @@ function changeSliderDOWN(ev) {
 
     let item = ev.target;
     sliderGoDown(item);
-
 }
-// -----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+
 function clickUpArrow() {
-    const mass = document.querySelectorAll('.slid'),
+    const mass = obj.massSlides,
         len = mass.length;
     for (let i = 0; i < len; i++) {
         if(sliderGoUp(mass[i])) return;
@@ -107,7 +111,7 @@ function clickUpArrow() {
 }
 // ------------------------------------------------------------------------------------
 function clickDownArrow() {
-    const mass = document.querySelectorAll('.slid'),
+    const mass = obj.massSlides,
         len = mass.length;
 
     for (let i = 0; i < len; i++){
@@ -133,6 +137,29 @@ window.onwheel = function(e) {
 
 };
 //----------------------------------------------------------------------------
+function menuShow() {
+    const mass = obj.massSlides,
+        len = mass.length;
+    let transForm = 0,
+        transDelay = .0;
+
+    for (let i = 0; i < len; i++){
+        if(!mass[i].style.transform || mass[i].style.transform === 'none'){
+            mass[i].style.transform = `translateY(${transForm}px)`;
+            // mass[i].style.transitionDelay = `${transDelay}s`;
+            mass[i].classList.add('menuOpen');
+            transForm += 80;
+            // transDelay += .05;
+        }else {
+            mass[i].style.transform = 'none';
+            mass[i].classList.remove('menuOpen');
+        }
+
+    }
+
+}
+
+// -----------------------------------------------------------------------------------
+obj.menuButton.addEventListener('click', menuShow);
 sliderContainer();
 arrowButtons();
-
