@@ -32,17 +32,15 @@
 .menuOpen{
     align-items: normal !important;
     align-content: normal !important;
-    font-size: 4em !important;
-    border-radius: 8px 8px 0 0;
+    /*font-size: 4em !important;*/
+    /*border-radius: 8px 8px 0 0;*/
     /*transition: transform 0.3s;*/
 }
 /*-----------------------------------------------------------------------------------------------*/
 @media screen and (max-width: 600px) {
-    .slid{
-        font-size: 5em !important;
-    }
-    .divArrowDown {
-        top: calc(100vh - (3em + 2em))
-    }
+
+    /*.divArrowDown {*/
+    /*    top: calc(100vh - (3em + 2em))*/
+    /*}*/
 }
 

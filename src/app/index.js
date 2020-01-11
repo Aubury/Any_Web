@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import '../css/style.css';
-import Arrow from '../img/arrow640.png';
+// import Arrow from '../img/arrow640.png';
 import slid1 from "./slides/slide1";
 import slid2 from "./slides/slide2";
 import slid3 from "./slides/slide3";
@@ -23,86 +23,64 @@ function sliderContainer(){
 
     obj.massSlides = cont.querySelectorAll('.slid');
 }
-
 //------------------------------------------------------------------------------------
 function sliderGoUp(item) {
-    const arrowUp =  document.querySelector('.divArrowUP'),
-        arrowDown =document.querySelector('.divArrowDown');
 
     if (item.classList.contains('show')) {
-        if (item.nextElementSibling && item.nextElementSibling !== arrowUp && item.nextElementSibling !== obj.menuButton) {
+        if (item.nextElementSibling && item.nextElementSibling !== obj.menuButton) {
             item.classList.remove('show', 'up');
             item.nextElementSibling.classList.remove('down');
             item.nextElementSibling.classList.add('show', 'up');
-            arrowDown.classList.remove('none');
-        }else {
-            arrowUp.classList.add('none');
+
+            return true;
+           }
         }
-        return true;
-    }
+
     return false;
+
 }
 //-----------------------------------------------------------------------------------
 function sliderGoDown(item) {
-    const arrowUp =  document.querySelector('.divArrowUP'),
-        arrowDown = document.querySelector('.divArrowDown');
+
     if(item.classList.contains('show')) {
-        if (item.previousElementSibling && item.previousElementSibling !== arrowDown && item.previousElementSibling !== obj.menuButton) {
-            arrowUp.classList.remove('none');
+        if (item.previousElementSibling && item.previousElementSibling !== obj.menuButton) {
             item.classList.remove('show', 'up');
             item.classList.add('down');
             setTimeout(() => {
                 item.previousElementSibling.classList.add('show');
             }, 2000);
 
-        }else {
-            arrowDown.classList.add('none');
+            return true;
         }
-
-      return true;
     }
     return false;
 }
 //-------------------------------------------------------------------------------------
-
-function arrowButtons() {
-
-    const divArrowUp = document.createElement('div'),
-          divArrowDown = document.createElement('div'),
-          cont = document.querySelector('.container'),
-          ArrowUp = new Image(),
-          ArrowDown = new Image();
-
-    ArrowUp.src = Arrow;
-    ArrowUp.alt = 'arrowUp';
-    divArrowUp.classList.add('divArrowUP', 'displayCenter', 'none');
-    divArrowUp.appendChild(ArrowUp);
-
-    ArrowDown.src = Arrow;
-    ArrowDown.alt = 'arrowDown';
-    divArrowDown.classList.add('divArrowDown', 'displayCenter');
-    divArrowDown.appendChild(ArrowDown);
-
-    cont.appendChild(divArrowUp);
-    cont.appendChild(divArrowDown);
-    ArrowUp.addEventListener('click',clickUpArrow);
-    ArrowDown.addEventListener('click',clickDownArrow);
-}
-//-------------------------------------------------------------------------------------
-function changeSliderUP(ev) {
-
-    let item = ev.target;
-    sliderGoUp(item);
-}
+// function arrowButtons() {
+//
+//     const divArrowUp = document.createElement('div'),
+//           divArrowDown = document.createElement('div'),
+//           cont = document.querySelector('.container'),
+//           ArrowUp = new Image(),
+//           ArrowDown = new Image();
+//
+//     ArrowUp.src = Arrow;
+//     ArrowUp.alt = 'arrowUp';
+//     divArrowUp.classList.add('divArrowUP', 'displayCenter', 'none');
+//     divArrowUp.appendChild(ArrowUp);
+//
+//     ArrowDown.src = Arrow;
+//     ArrowDown.alt = 'arrowDown';
+//     divArrowDown.classList.add('divArrowDown', 'displayCenter');
+//     divArrowDown.appendChild(ArrowDown);
+//
+//     cont.appendChild(divArrowUp);
+//     cont.appendChild(divArrowDown);
+//     ArrowUp.addEventListener('click',clickUpArrow);
+//     ArrowDown.addEventListener('click',clickDownArrow);
+// }
 //-----------------------------------------------------------------------------------
-function changeSliderDOWN(ev) {
-
-    let item = ev.target;
-    sliderGoDown(item);
-}
-//-----------------------------------------------------------------------------------
-
-function clickUpArrow() {
+function changeSliderUP() {
     const mass = obj.massSlides,
         len = mass.length;
     for (let i = 0; i < len; i++) {
@@ -110,7 +88,7 @@ function clickUpArrow() {
     }
 }
 // ------------------------------------------------------------------------------------
-function clickDownArrow() {
+function changeSliderDOWN() {
     const mass = obj.massSlides,
         len = mass.length;
 
@@ -119,47 +97,150 @@ function clickDownArrow() {
     }
 
 }
-//------------------------------------------------------------------------------
-document.addEventListener('keydown', function(event) {
+//----------------------------------------------------------------------------------
+function swipeDetect(){
+
+    const container = obj.container;
+
+    container.addEventListener("touchstart", startTouch, false);
+    container.addEventListener("touchmove", moveTouch, false);
+
+    // Swipe Up / Down / Left / Right
+    let initialX = null,
+        initialY = null;
+
+    function startTouch(e) {
+        initialX = e.touches[0].clientX;
+        initialY = e.touches[0].clientY;
+    };
+
+    function moveTouch(e) {
+        if (initialX === null) {
+            return;
+        }
+
+        if (initialY === null) {
+            return;
+        }
+
+        let currentX = e.touches[0].clientX,
+            currentY = e.touches[0].clientY;
+
+        let diffX = initialX - currentX,
+            diffY = initialY - currentY;
+
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            // sliding horizontally
+            if (diffX > 0) {
+                // swiped left
+                // console.log("swiped left");
+            } else {
+                // swiped right
+                // console.log("swiped right");
+            }
+        } else {
+            // sliding vertically
+            if (diffY > 0) {
+                // swiped up
+                changeSliderUP();
+            } else {
+                // swiped down
+                changeSliderDOWN();
+            }
+        }
+
+        initialX = null;
+        initialY = null;
+
+        e.preventDefault();
+    };
+}
+//----------------------------------------------------------------------------
+function buttonDown(event) {
+
     if (event.code === 'ArrowDown') {
-        clickDownArrow();
+        changeSliderDOWN();
     }
     if (event.code === 'ArrowUp') {
-        clickUpArrow();
+        changeSliderUP();
     }
+}
+//--------------------------------------------------------------------------
+function mouseWheel(e) {
+    let delta = e.deltaY || e.detail;
+    delta > 0 ? changeSliderUP() : changeSliderDOWN();
 
-});
-//------------------------------------------------------------------------------
-window.onwheel = function(e) {
-    // wheelDelta не даёт возможность узнать количество пикселей
-    let delta = e.deltaY || e.detail || e.wheelDelta;
-    delta > 0 ? changeSliderUP(e) : changeSliderDOWN(e);
+}
+//-----------------------------------------------------------------------------------
+function startListener(){
+    document.addEventListener('keydown', buttonDown);
+    window.addEventListener('wheel', mouseWheel);
+}
+//-----------------------------------------------------------------------------------
+function stopListener(){
+    document.removeEventListener('keydown', buttonDown);
+    window.removeEventListener('wheel', mouseWheel);
+}
+//---------------------------------------------------------------------------------
+function choosePage(e) {
+    let mass = obj.massSlides,
+        id = this.id,
+        len = mass.length;
 
-};
-//----------------------------------------------------------------------------
+    for (let i = len-1; i > 0; i--){
+        if(mass[i].id === id) {
+            mass[i].style.transform = 'none';
+            mass[i].style.borderRadius = `0`;
+            continue;
+        }else {
+            if(mass[i].classList.contains('show')) {
+                if (mass[i].previousElementSibling && mass[i].previousElementSibling !== obj.menuButton) {
+                    mass[i].classList.remove('show', 'up');
+                    mass[i].classList.add('down');
+                    mass[i].previousElementSibling.classList.add('show');
+                }
+            }
+        }
+        mass[i].style.borderRadius = `0`;
+        mass[i].style.transform = 'none';
+    }
+    startListener();
+}
+//-----------------------------------------------------------------------------------
 function menuShow() {
     const mass = obj.massSlides,
         len = mass.length;
-    let transForm = 0,
-        transDelay = .0;
+    let transForm = 0;
+    mass.forEach( el => {
+        sliderGoUp(el);
+    });
 
     for (let i = 0; i < len; i++){
+
         if(!mass[i].style.transform || mass[i].style.transform === 'none'){
-            mass[i].style.transform = `translateY(${transForm}px)`;
-            // mass[i].style.transitionDelay = `${transDelay}s`;
+            if(i){
+                transForm += 80;
+                mass[i].style.borderRadius = `8px 8px 0 0`;
+                mass[i].style.transform = `translateY(${transForm}px)`;
+
+            }
             mass[i].classList.add('menuOpen');
-            transForm += 80;
-            // transDelay += .05;
+            mass[i].addEventListener('click', choosePage);
+            stopListener();
         }else {
             mass[i].style.transform = 'none';
             mass[i].classList.remove('menuOpen');
+            mass[i].style.borderRadius = `0`;
+            startListener();
+            mass[i].removeEventListener('click', choosePage);
+
         }
-
     }
-
 }
-
 // -----------------------------------------------------------------------------------
 obj.menuButton.addEventListener('click', menuShow);
 sliderContainer();
-arrowButtons();
+swipeDetect();
+startListener();
+
+
