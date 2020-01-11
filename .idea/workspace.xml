@@ -104,8 +104,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.build" />
-        <item itemvalue="npm.clear" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.clear" />
         <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
@@ -136,7 +136,7 @@
       <workItem from="1578547405766" duration="13805000" />
       <workItem from="1578652271332" duration="25494000" />
       <workItem from="1578685884112" duration="2967000" />
-      <workItem from="1578727842424" duration="6426000" />
+      <workItem from="1578727842424" duration="12618000" />
     </task>
     <servers />
   </component>

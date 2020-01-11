@@ -9,7 +9,9 @@ import slid4 from "./slides/slide4";
 const obj = {
     container : document.querySelector('.container'),
     menuButton: document.querySelector('.menu-btn'),
-    massSlides: []
+    massSlides: [],
+    initialX  : null,
+    initialY  :null
 }
 //------------------------------------------------------------------------------------
 function sliderContainer(){
@@ -97,37 +99,27 @@ function changeSliderDOWN() {
     }
 
 }
-//----------------------------------------------------------------------------------
-function swipeDetect(){
+//---------------------Swipe Up / Down / Left / Right-------------------------------------------------------------
 
-    const container = obj.container;
+function startTouch(e) {
+       obj.initialX = e.touches[0].clientX;
+       obj.initialY = e.touches[0].clientY;
+}
 
-    container.addEventListener("touchstart", startTouch, false);
-    container.addEventListener("touchmove", moveTouch, false);
-
-    // Swipe Up / Down / Left / Right
-    let initialX = null,
-        initialY = null;
-
-    function startTouch(e) {
-        initialX = e.touches[0].clientX;
-        initialY = e.touches[0].clientY;
-    };
-
-    function moveTouch(e) {
-        if (initialX === null) {
+function moveTouch(e) {
+        if (obj.initialX === null) {
             return;
         }
 
-        if (initialY === null) {
+        if (obj.initialY === null) {
             return;
         }
 
         let currentX = e.touches[0].clientX,
             currentY = e.touches[0].clientY;
 
-        let diffX = initialX - currentX,
-            diffY = initialY - currentY;
+        let diffX = obj.initialX - currentX,
+            diffY = obj.initialY - currentY;
 
         if (Math.abs(diffX) > Math.abs(diffY)) {
             // sliding horizontally
@@ -149,11 +141,10 @@ function swipeDetect(){
             }
         }
 
-        initialX = null;
-        initialY = null;
+        obj.initialX = null;
+        obj.initialY = null;
 
         e.preventDefault();
-    };
 }
 //----------------------------------------------------------------------------
 function buttonDown(event) {
@@ -175,11 +166,26 @@ function mouseWheel(e) {
 function startListener(){
     document.addEventListener('keydown', buttonDown);
     window.addEventListener('wheel', mouseWheel);
+
+    const container = obj.container;
+    container.addEventListener("touchstart", startTouch, false);
+    container.addEventListener("touchmove", moveTouch, false);
 }
 //-----------------------------------------------------------------------------------
 function stopListener(){
     document.removeEventListener('keydown', buttonDown);
     window.removeEventListener('wheel', mouseWheel);
+
+    const container = obj.container;
+    container.removeEventListener("touchstart", startTouch);
+    container.removeEventListener("touchmove", moveTouch);
+
+}
+//--------------------------------------------------------------------------------
+function removeChange(item) {
+    item.style.transform = 'none';
+    item.style.borderRadius = `0`;
+    item.classList.remove('menuOpen');
 }
 //---------------------------------------------------------------------------------
 function choosePage(e) {
@@ -187,22 +193,20 @@ function choosePage(e) {
         id = this.id,
         len = mass.length;
 
-    for (let i = len-1; i > 0; i--){
+    for (let i = len-1; i >= 0; i--){
         if(mass[i].id === id) {
-            mass[i].style.transform = 'none';
-            mass[i].style.borderRadius = `0`;
+            removeChange(mass[i]);
             continue;
-        }else {
-            if(mass[i].classList.contains('show')) {
-                if (mass[i].previousElementSibling && mass[i].previousElementSibling !== obj.menuButton) {
-                    mass[i].classList.remove('show', 'up');
-                    mass[i].classList.add('down');
-                    mass[i].previousElementSibling.classList.add('show');
-                }
+        }
+        if(mass[i].classList.contains('show')) {
+            if (mass[i].previousElementSibling && mass[i].previousElementSibling !== obj.menuButton) {
+                mass[i].classList.remove('show', 'up');
+                mass[i].classList.add('down');
+                mass[i].previousElementSibling.classList.add('show');
+
             }
         }
-        mass[i].style.borderRadius = `0`;
-        mass[i].style.transform = 'none';
+        removeChange(mass[i]);
     }
     startListener();
 }
@@ -240,7 +244,6 @@ function menuShow() {
 // -----------------------------------------------------------------------------------
 obj.menuButton.addEventListener('click', menuShow);
 sliderContainer();
-swipeDetect();
 startListener();
 
 
