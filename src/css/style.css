@@ -4,9 +4,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-.color{
-    color: red;
-}
 .displayCenter{
     display: flex;
     justify-content: center;
@@ -32,15 +29,9 @@
 .menuOpen{
     align-items: normal !important;
     align-content: normal !important;
-    /*font-size: 4em !important;*/
-    /*border-radius: 8px 8px 0 0;*/
-    /*transition: transform 0.3s;*/
 }
 /*-----------------------------------------------------------------------------------------------*/
 @media screen and (max-width: 600px) {
 
-    /*.divArrowDown {*/
-    /*    top: calc(100vh - (3em + 2em))*/
-    /*}*/
 }
 

@@ -1,24 +1,30 @@
+#AddDefaultCharset UTF-8
+#RewriteEngine on
+#RewriteBase /
+#Если файл на сервере существует - то не использовать перезаписываемое правило
+#RewriteCond %{REQUEST_FILENAME} !-f
+#
+#RewriteRule ^(.*)$ /dist/index.html
+##Index-страница
+#DirectoryIndex /dist/index.html
+#=====================================================
+<IfModule mod_rewrite.c>
 AddDefaultCharset UTF-8
 RewriteEngine on
-RewriteBase /
-#Если файл на сервере существует - то не использовать перезаписываемое правило
 RewriteCond %{REQUEST_FILENAME} !-f
-
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /dist/index.html
-#Index-страница
+# Change default directory pages.
 DirectoryIndex /dist/index.html
-
-#RewriteCond %{THE_REQUEST} ^[A-Z]{3,11}\ dist/index\.html\ HTTP/
-#RewriteRule ^/dist/index\.html$ http://any-web.net [R=301,L]
-#RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
-#RewriteRule ^index\.php$ http://site.com [R=301,L]
-
-
+</IfModule>
+#========================================================
+#
 #<IfModule mod_rewrite.c>
+#AddDefaultCharset UTF-8
 #RewriteEngine On
 #RewriteBase /
-#RewriteRule ^index\.html$ - [L]
+#RewriteRule ^ /dist/index\.html$ - [L]
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{REQUEST_FILENAME} !-d
-#RewriteRule . /index.html [L]
+#RewriteRule /dist/index.html [L]
 #</IfModule>

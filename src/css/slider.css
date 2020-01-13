@@ -74,45 +74,64 @@ h1{
 
 }
 /*----------------------------Arrow------------------------------------------------------*/
-/*.divArrowUP{*/
-/*    position: absolute;*/
-/*    width: 3em;*/
-/*    height: 3em;*/
-/*    padding: 2px 2px 8px 2px !important;*/
-/*    top:.5em;*/
-/*    left: calc((100vw/2) - (3em/2));*/
-/*    background-color: rgba(240, 248, 255, 0.4);*/
-/*    border-radius: 50%;*/
-/*    z-index: 99;*/
-/*    outline:none;*/
-/*}*/
-/*.divArrowDown{*/
-/*    position: absolute;*/
-/*    width: 3em;*/
-/*    height: 3em;*/
-/*    padding: 8px 2px 2px 2px !important;*/
-/*    top: calc(100% - (3em + 2em));*/
-/*    left: calc((100vw/2) - (3em/2));*/
-/*    background-color: rgba(240, 248, 255, 0.4);*/
-/*    border-radius: 50%;*/
-/*    z-index: 99;*/
-/*    outline:none;*/
+@keyframes moveButton{
+    from {
+        margin-top: 0;
+    }
+    5%{
+        margin-top: 10px;
+    }
+    10%{
+        margin-top: 0;
+    }
+    15%{
+        margin-top: 10px;
+    }
+    20%{
+        margin-top: 0;
+    }
+    100%{
+        margin-top: 0;
+    }
 
+}
+.divArrowUP{
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    padding: 8px 2px 2px 2px !important;
+    top:.5em;
+    left: calc(100vw - 6em);
+    border-radius: 50%;
+    z-index: 99;
+    outline:none;
+}
+.divArrowUP img {
+    height: 90%;
+    width: 90%;
+    /*transform: rotate(90deg);*/
 
-/*}*/
-/*.divArrowDown img{*/
-/*    height: 80%;*/
-/*    width: 80%;*/
-/*    transform: rotate(180deg);*/
-/*}*/
-/*.divArrowUP img{*/
-/*    height: 80%;*/
-/*    width: 80%;*/
-/*}*/
-/*.divArrowDown:hover,*/
-/*.divArrowUP:hover{*/
-/*    cursor: pointer;*/
-/*    width: 3.5em;*/
-/*    height: 3.5em;*/
-/*    background-color: rgba(240, 248, 255, 0.5);*/
-/*}*/
+}
+.divArrowDown{
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    transform: rotate(-90deg);
+    padding: 8px 2px 2px 2px !important;
+    top: calc(100% - 13%);
+    left: calc(100vw - 6em);
+    border-radius: 50%;
+    z-index: 99;
+    outline:none;
+}
+.divArrowDown img {
+    height: 90%;
+    width: 90%;
+    transform: rotate(90deg);
+
+}
+.animButton{
+    margin-top: 0;
+    animation: moveButton 5s ease-in-out infinite;
+}
+

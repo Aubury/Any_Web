@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -8,7 +9,7 @@ module.exports = {
         another: './src/app/another-module.js',
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname,'dist'),
         filename: '[name].bundle.js',
       },
       optimization: {
@@ -39,10 +40,11 @@ module.exports = {
             {
                 test: /\.(png|svg|jpg|gif)$/,
                 include: path.resolve(__dirname, 'src/img'),
+                // use:[ 'file-loader' ,],
                 use: {
                     loader: 'file-loader',
                     options: {
-                        name: 'dist/img/[name].[ext]',
+                        name:  'img/[name].[ext]',
                         context: ''
                     }
                 },
@@ -59,7 +61,8 @@ module.exports = {
                 use: {
                   loader: 'html-loader',
                   options: {
-                    attrs: [':data-src']
+                      root: path.resolve(__dirname, 'src'),
+                      attrs: ['img:src', 'link:href']
                   }
                 }
               }
@@ -69,11 +72,13 @@ module.exports = {
         // new HtmlWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: 'Any Web',
+            template: path.resolve(__dirname, 'src/html', 'index.html'),
             filename: 'index.html',
-            template: 'src/html/index.html',
             inject: true,
             inlineSource: '.(js|css)$' // embed all javascript and css inline
+
         }),
         new HtmlWebpackInlineSourcePlugin(),
+        new ExtractTextPlugin("[name].css") //Extract to styles.css file
       ]
 }
