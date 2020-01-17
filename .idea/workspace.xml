@@ -19,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -103,10 +103,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
-        <item itemvalue="npm.clear" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.clear" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -140,7 +140,12 @@
       <workItem from="1578818901997" duration="17184000" />
       <workItem from="1578893766499" duration="7191000" />
       <workItem from="1578918209645" duration="17781000" />
-      <workItem from="1578942786710" duration="3621000" />
+      <workItem from="1578942786710" duration="3678000" />
+      <workItem from="1578980361774" duration="6254000" />
+      <workItem from="1579071038003" duration="228000" />
+      <workItem from="1579097969753" duration="478000" />
+      <workItem from="1579193262991" duration="9080000" />
+      <workItem from="1579261132424" duration="26204000" />
     </task>
     <servers />
   </component>

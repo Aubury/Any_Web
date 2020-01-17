@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.mainDiv{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.cat{
+    position: absolute;
+    height: 25%;
+    width: auto;
+    top: calc(100vh - 30%);
+    left: 5%;
+    border-bottom: 1px solid #000028;
+    line-height: 0;
+    padding-bottom: -10px;
+}
+.moon{
+    position: absolute;
+    height: auto;
+    max-width: 380px;
+    width: 35%;
+    top: 10px;
+    left: calc(100vw - 35%);
+    z-index: 99;
+}
+
+.star{
+    position: absolute;
+    width: auto;
+    transition: .5s;
+}
