@@ -33,3 +33,38 @@
     width: auto;
     transition: .5s;
 }
+.cloud1{
+    background-image: url("../img/cloud_1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 40%;
+    height: 28%;
+    position: absolute;
+    top:10%;
+    left: calc(100vw - 45%);
+    transition: 1s;
+}
+.cloud2{
+    background-image: url("../img/cloud_2.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 40%;
+    height: 28%;
+    position: absolute;
+    top:20%;
+    left: calc(100vw - 40%);
+    z-index: 100;
+    transition: .5s;
+}
+.cloud3 {
+    background-image: url("../img/cloud_3.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 65%;
+    height: 25%;
+    position: absolute;
+    top: 25%;
+    left: calc(100vw - 100%);
+    z-index: 100;
+    transition: 1.5s;
+}

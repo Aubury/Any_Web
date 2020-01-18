@@ -19,14 +19,43 @@ function addImage() {
     obj.container.appendChild( obj.Moon);
     // obj.Moon.style.left = (document.documentElement.clientWidth - (obj.Moon.width + 15)) + 'px';
 
-
-
     obj.Cat.src = Cat;
     obj.Cat.alt = 'Cat';
     obj.Cat.classList.add('cat');
     obj.container.appendChild( obj.Cat);
 
 
+}
+//-------------------------------------------------------------
+function cloudsImg() {
+    let div1 = document.createElement('div'),
+        div2 = document.createElement('div'),
+        div3 = document.createElement('div');
+
+
+    div1.classList.add('cloud1','cloud');
+    obj.container.appendChild(div1);
+
+    div2.classList.add('cloud2', 'cloud');
+    obj.container.appendChild(div2);
+
+    div3.classList.add('cloud3', 'cloud');
+    obj.container.appendChild(div3);
+}
+//-----------------------------------------------------------
+function moveClouds() {
+    const  massCloud = obj.container.querySelectorAll('.cloud');
+
+    massCloud.forEach( el => {
+        let str = (el.style.left).slice(0,(el.style.left).length - 2);
+        if(Number(str) > (document.documentElement.clientWidth + 10)){
+            el.classList.add('none');
+            el.style.left = '-' + (el.clientWidth + 500) + 'px';
+        }else{
+            el.classList.remove('none');
+            el.style.left = (el.offsetLeft + 10) + 'px';
+        }
+    })
 }
 //-------------------------------------------------------------
 function changePositionStars() {
@@ -92,7 +121,9 @@ function container() {
 
     addImage();
     stars();
+    cloudsImg();
     setInterval(changePositionStars, 20000);
+    setInterval(moveClouds,0);
 }
 
 container();
