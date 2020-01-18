@@ -43,6 +43,7 @@
     top:10%;
     left: calc(100vw - 45%);
     transition: 1s;
+    z-index: 98;
 }
 .cloud2{
     background-image: url("../img/cloud_2.png");
@@ -65,6 +66,6 @@
     position: absolute;
     top: 25%;
     left: calc(100vw - 100%);
-    z-index: 100;
+    z-index: 101;
     transition: 1.5s;
 }
