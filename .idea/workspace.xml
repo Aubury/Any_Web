@@ -37,13 +37,14 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/css" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\Any_Web\src\css" />
       <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\Any_Web" />
       <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\Any_Web\src\app\slides" />
     </key>
@@ -146,7 +147,11 @@
       <workItem from="1579097969753" duration="478000" />
       <workItem from="1579193262991" duration="9080000" />
       <workItem from="1579261132424" duration="26928000" />
-      <workItem from="1579331832409" duration="13019000" />
+      <workItem from="1579331832409" duration="13388000" />
+      <workItem from="1579372238804" duration="1187000" />
+      <workItem from="1579373494676" duration="11637000" />
+      <workItem from="1579421402186" duration="26376000" />
+      <workItem from="1579498810093" duration="8322000" />
     </task>
     <servers />
   </component>

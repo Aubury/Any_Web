@@ -262,6 +262,12 @@ function menuShow() {
     }
 }
 // -----------------------------------------------------------------------------------
+// Прослушка события смены ориентации
+window.addEventListener("orientationchange", function(ev) {
+    // Выводим числовое значение ориентации
+    console.log(window.orientation);
+}, false);
+// ----------------------------------------------------
 obj.menuButton.addEventListener('click', menuShow);
 sliderContainer();
 startListener();

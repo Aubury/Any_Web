@@ -3,31 +3,77 @@
     padding: 0;
     box-sizing: border-box;
 }
+.h1{
+    position: absolute;
+    top:0;
+    width: 100%;
+    font-family: "Hanging Letters";
+    font-size: 4em;
+    z-index: 999;
+    text-align: center;
+    color: #67c2fb;
+    line-height: 100px;
+    /*text-shadow: 2px 4px 3px rgba(142, 142, 142, 0.48);*/
+}
+.topBlock{
+    height: 50%;
+    width: 100%;
+}
+.bottomBlock{
+    height: 50%;
+    width: 100%;
+}
 .mainDiv{
     height: 100%;
-    width: 100%;
+    width: 80%;
     position: relative;
+    left: calc((100% - 80%)/2);
+    display: flex;
+    flex-direction: column;
+}
+.blockCat{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    display: flex;
+    flex-direction: row;
 }
 .cat{
-    position: absolute;
-    height: 25%;
+    width: 40%;
+    display: flex;
+    align-items: flex-end;
+}
+.cat img{
+    height: 50%;
     width: auto;
-    top: calc(100vh - 30%);
-    left: 5%;
-    border-bottom: 1px solid #000028;
-    line-height: 0;
-    padding-bottom: -10px;
-}
-.moon{
-    position: absolute;
-    height: auto;
-    max-width: 380px;
-    width: 35%;
-    top: 10px;
-    left: calc(100vw - 35%);
-    z-index: 99;
-}
+    margin-bottom: 20px;
 
+}
+.blockMoon{
+    width: 30%;
+    height: auto;
+    max-height: calc(100% / 3);
+    position: absolute;
+    top: 10px;
+    left: calc(100% - 35%);
+    z-index: 99;
+    display: flex;
+    justify-content: flex-end;
+}
+.blockMoon img{
+      width: 90%;
+      height: 90%;
+      text-align: left;
+}
+.comment{
+    width: 60%;
+}
+.comment img{
+    height: 50%;
+    width: auto;
+}
 .star{
     position: absolute;
     width: auto;
@@ -68,4 +114,66 @@
     left: calc(100vw - 100%);
     z-index: 101;
     transition: 1.5s;
+}
+/*-------------------------------------------------------------*/
+@media screen and (max-width: 800px) and (orientation: landscape){
+    .mainDiv{
+        width: 70%;
+        left: calc((100% - 70%)/2);
+    }
+    .h1{
+        font-size: 2.5em !important;
+        line-height: 60px !important;
+    }
+    .blockMoon img {
+        width: 50%;
+        height: 50%;
+    }
+}
+/*--------------------------------------------------------------*/
+@media screen and (max-width: 1050px) {
+    .mainDiv{
+        width: 90% !important;
+        left: calc((100% - 90%)/2);
+    }
+}
+/*--------------------------------------------------------------*/
+@media screen and (max-width: 900px) {
+    .h1{
+        font-size: 3em;
+        line-height: 80px;
+    }
+}
+/*--------------------------------------------------------------*/
+@media screen and (max-width: 800px) {
+    .h1{
+        font-size: 3em;
+        line-height: 80px;
+    }
+}
+/*-------------------------------------------------------------*/
+@media screen and (max-width: 600px) {
+    .h1{
+        font-size: 2em;
+        line-height: 50px;
+    }
+    .mainDiv{
+        width: 90%;
+        left: calc((100% - 90%)/2);
+
+    }
+    .blockCat{
+        width: 80%;
+        left: 1%;
+    }
+    .blockMoon{
+        width: 50%;
+    }
+    .cat img {
+        height: 40%;
+        /*margin-bottom: 20px;*/
+    }
+    .comment img {
+        height: 40%;
+    }
 }

@@ -1,5 +1,7 @@
+@import "reset.css";
 @import "slider.css";
 @import "slide_1.css";
+@import "../fonts/font.css";
 *{
     margin: 0;
     padding: 0;
@@ -18,19 +20,38 @@
 /*----------------------------------------------------------------------------------------------*/
 .menu-btn {
     position: absolute;
-    z-index: 10;
+    z-index: 99999;
     top: 0;
     left: 0;
-    height: 70px;
-    width: 54px;
+    height: 60px;
+    width: 60px;
     cursor: pointer;
     background: url(https://iamturner.co.uk/codepen/menu-icon.png) no-repeat center;
-    background-size: 44px;
+    background-size: 70px;
 }
 .menuOpen{
     align-items: normal !important;
     align-content: normal !important;
 }
+/*-------------------------------------------------------------------------------------------------*/
+/*@media screen and (orientation:landscape) and (max-device-width: 900px) {*/
+/*    html{*/
+/*        -webkit-transform: rotate(-90deg);*/
+/*        -moz-transform: rotate(-90deg);*/
+/*        -ms-transform: rotate(-90deg);*/
+/*        -o-transform: rotate(-90deg);*/
+/*        transform: rotate(-90deg);*/
+/*        -webkit-transform-origin: left top;*/
+/*        -moz-transform-origin: left top;*/
+/*        -ms-transform-origin: left top;*/
+/*        -o-transform-origin: left top;*/
+/*        transform-origin: left top;*/
+/*        max-width: 400px; !*Разрешение экрана iPhone*!*/
+/*        position: absolute;*/
+/*        top: 100%;*/
+/*        left: 0*/
+/*    }*/
+/*}*/
 /*-----------------------------------------------------------------------------------------------*/
 @media screen and (max-width: 600px) {
 
