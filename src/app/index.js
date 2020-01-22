@@ -12,6 +12,10 @@ const obj = {
     menuButton: document.querySelector('.menu-btn'),
     divArrowUp: document.querySelector('.divArrowUP'),
     divArrowDown: document.querySelector('.divArrowDown'),
+    modalWindow: document.querySelector('#modal'),
+    openModal  : document.querySelector('.contacts'),
+    closeModal : document.querySelector('.btn'),
+    contacts   : document.querySelector('#Contacts'),
     ArrowUp   : new Image(),
     ArrowDown : new Image(),
     massSlides: [],
@@ -47,17 +51,18 @@ function arrowButtons() {
 }
 //-----------------------------------------------------------------------------------
 function lastItemOfArr() {
-   const mass = obj.massSlides,
-       len = mass.length,
-       index = obj.index;
+   const index = obj.index;
 
-   if(index === 1){
+   if(index === 2 && obj.divArrowUp.classList.contains('none')) {
        obj.divArrowUp.classList.remove('none');
        obj.divArrowDown.classList.add('none');
+       return;
    }
-   if(index === len-2){
+   if(index === 2 && obj.divArrowDown.classList.contains('none')){
        obj.divArrowUp.classList.add('none');
        obj.divArrowDown.classList.remove('none');
+       return;
+
    }else {
        return;
    }
@@ -67,7 +72,8 @@ function lastItemOfArr() {
 function sliderGoUp(item) {
 
     if (item.classList.contains('show')) {
-        if (item.nextElementSibling && item.nextElementSibling !== obj.divArrowUp && item.nextElementSibling !== obj.menuButton) {
+        if (item.nextElementSibling && item.nextElementSibling !== obj.divArrowUp
+            && item.nextElementSibling.id != 'Contacts') {
             lastItemOfArr();
             item.classList.remove('show', 'up');
             item.nextElementSibling.classList.remove('down');
@@ -83,7 +89,8 @@ function sliderGoUp(item) {
 function sliderGoDown(item) {
 
     if(item.classList.contains('show')) {
-        if (item.previousElementSibling && item.previousElementSibling !== obj.divArrowDown && item.previousElementSibling !== obj.menuButton) {
+        if (item.previousElementSibling && item.previousElementSibling !== obj.divArrowDown
+            && item.previousElementSibling.id != 'Contacts') {
             lastItemOfArr();
             item.classList.remove('show', 'up');
             item.classList.add('down');
@@ -102,7 +109,7 @@ function changeSliderUP() {
         len = mass.length;
     obj.ArrowUp.classList.remove('animButton');
 
-    for (let i = 0; i < len; i++) {
+    for (let i = 1; i < len-1; i++) {
         obj.index = i;
         if(sliderGoUp(mass[i])) return;
     }
@@ -112,7 +119,7 @@ function changeSliderDOWN() {
     let mass = obj.massSlides,
         len = mass.length;
 
-    for (let i = 0; i < len; i++){
+    for (let i = 1; i < len; i++){
         obj.index = i;
         if(sliderGoDown(mass[i])) return;
     }
@@ -209,22 +216,41 @@ function choosePage(e) {
         id = this.id,
         len = mass.length;
 
-    for (let i = len-1; i >= 0; i--){
-        if(mass[i].id === id) {
-            removeChange(mass[i]);
-            continue;
-        }
-        if(mass[i].classList.contains('show')) {
-            if (mass[i].previousElementSibling && mass[i].previousElementSibling !== obj.menuButton) {
-                mass[i].classList.remove('show', 'up');
-                mass[i].classList.add('down');
-                mass[i].previousElementSibling.classList.add('show');
 
+    for (let i = len-1; i >= 0; i--){
+        if(id === 'Contacts') {
+
+            closeMenu(mass[i]);
+            modalWindow();
+
+        }else{
+            if(mass[i].id === id) {
+                removeChange(mass[i]);
+                continue;
             }
+            if(mass[i].classList.contains('show')) {
+                if (mass[i].previousElementSibling && mass[i].previousElementSibling !== obj.menuButton) {
+                    mass[i].classList.remove('show', 'up');
+                    mass[i].classList.add('down');
+                    mass[i].previousElementSibling.classList.add('show');
+                    obj.index = i;
+
+                }
+            }
+            lastItemOfArr();
+            removeChange(mass[i]);
+            startListener();
         }
-        removeChange(mass[i]);
     }
-    startListener();
+
+}
+//----------------------------------------------------------------------------------
+function closeMenu(item) {
+    item.style.transform = 'none';
+    item.classList.remove('menuOpen');
+    item.style.borderRadius = `0`;
+    obj.divArrowDown.classList.remove('none');
+    item.removeEventListener('click', choosePage);
 }
 //-----------------------------------------------------------------------------------
 function menuShow() {
@@ -251,26 +277,36 @@ function menuShow() {
             obj.divArrowUp.classList.add('none');
             stopListener();
         }else {
-            mass[i].style.transform = 'none';
-            mass[i].classList.remove('menuOpen');
-            mass[i].style.borderRadius = `0`;
-            obj.divArrowDown.classList.remove('none');
+            closeMenu(mass[i]);
             startListener();
-            mass[i].removeEventListener('click', choosePage);
 
         }
     }
 }
 // -----------------------------------------------------------------------------------
 // Прослушка события смены ориентации
-window.addEventListener("orientationchange", function(ev) {
-    // Выводим числовое значение ориентации
-    console.log(window.orientation);
-}, false);
-// ----------------------------------------------------
+// window.addEventListener("orientationchange", function(ev) {
+//     // Выводим числовое значение ориентации
+//     console.log(window.orientation);
+// }, false);
+
+// -----------------------------------------------------------------------------------
+function modalWindow(){
+    const modal = obj.modalWindow,
+          btnClose = obj.closeModal;
+
+    modal.classList.add('modalActive');
+    stopListener();
+    btnClose.addEventListener('click', ()=> {
+        modal.classList.remove('modalActive');
+        startListener();
+    });
+}
+// --------------------------------------------------------
 obj.menuButton.addEventListener('click', menuShow);
 sliderContainer();
 startListener();
 arrowButtons();
+// modalWindow()
 
 

@@ -87,7 +87,7 @@ function changePositionStars() {
 
      for(let i = 0; i < massStars.length; i++){
          let top = Math.round(Math.random()*(40 - 5) + 5),
-             left =  Math.round(Math.random()*(100 - 5) + 5);
+             left =  Math.round(Math.random()*(100 - 1) + 1);
              massStars[i].style.top = top + '%';
              massStars[i].style.left = left + '%';
      }
@@ -96,7 +96,7 @@ function changePositionStars() {
 function positionStar(newStar) {
 
     let top = Math.round(Math.random()*(40 - 5) + 5),
-        left =  Math.round(Math.random()*(100 - 5) + 5);
+        left =  Math.round(Math.random()*(100 - 1) + 1);
 
         newStar.style.top = top + '%';
         newStar.style.left = left + '%';
@@ -127,7 +127,7 @@ function stars() {
          Star.classList.add('star');
          Star.style.height = sizeStar() + 'px';
          positionStar(Star);
-         obj.topBlock.appendChild(Star);
+         obj.main.appendChild(Star);
 
     }
 }

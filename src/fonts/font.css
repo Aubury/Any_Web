@@ -2,3 +2,7 @@
  font-family: 'Hanging Letters';
     src: url("Hanging Letters.ttf");
 }
+@font-face {
+    font-family: "Segoe Print Bold";
+    src: url("Segoe Print Bold.ttf");
+}

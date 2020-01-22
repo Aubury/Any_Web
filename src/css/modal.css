@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+
+}
+#modal {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    position: absolute;
+    font-family: 'Segoe Print Bold';
+    top: -110%;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background: rgba(0,0,0,0.7);
+}
+.modalActive{
+    top: 0 !important;
+    position: fixed !important;
+    transition: all 0.4s linear;
+    /*-moz-transition: all 0.4s ease-in-out;*/
+    /*-webkit-transition: all 0.4s ease-in-out;*/
+}
+
+.modalForm{
+    background: #fff;
+    width: 35em;
+    border-radius: 5px;
+    font-size: 1.3em;
+    box-shadow: 0 3px 7px rgba(0,0,0,.25);
+    /*-moz-box-shadow: 0 3px 7px rgba(0,0,0,.25);*/
+    /*-webkit-box-shadow: 0 3px 7px rgba(0,0,0,.25);*/
+    text-align: center;
+}
+.modalForm main{
+    margin: 20px auto;
+}
+.modalForm main p{
+    margin: 20px auto;
+}
+.modalForm header, .modalForm footer {
+    background: #c5c5c5;
+    border-bottom: 1px solid #939393;
+    border-radius: 5px 5px 0 0;
+    /*-moz-border-radius: 5px 5px 0 0;*/
+    /*-webkit-border-radius: 5px 5px 0 0;*/
+}
+.modalForm footer {
+    border-top: 1px solid #939393;
+    border-radius: 0 0 5px 5px;
+    /*-moz-border-radius: 0 0 5px 5px;*/
+    /*-webkit-border-radius: 0 0 5px 5px;*/
+}
+.modalForm div, .modalForm header, .modalForm footer {
+    padding: 15px;
+    z-index: 200;
+}
+.modalForm h2 {
+    font-size: 2em;
+    text-align: center;
+    margin: 0;
+    color: black;
+}
+.modalForm .btn {
+    cursor: pointer;
+    color: #000068;
+}
+.contacts{
+cursor: pointer;
+}
