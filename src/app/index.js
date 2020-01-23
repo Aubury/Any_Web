@@ -6,6 +6,7 @@ import slid1 from "./slides/slide1";
 import slid2 from "./slides/slide2";
 import slid3 from "./slides/slide3";
 import slid4 from "./slides/slide4";
+import slid5 from "./slides/slide5";
 
 const obj = {
     container : document.querySelector('.container'),
@@ -28,6 +29,7 @@ function sliderContainer(){
 
     const cont = obj.container;
 
+    cont.appendChild(slid5);
     cont.appendChild(slid4);
     cont.appendChild(slid3);
     cont.appendChild(slid2);
@@ -58,7 +60,7 @@ function lastItemOfArr() {
        obj.divArrowDown.classList.add('none');
        return;
    }
-   if(index === 2 && obj.divArrowDown.classList.contains('none')){
+   if(index === 3 && obj.divArrowDown.classList.contains('none')){
        obj.divArrowUp.classList.add('none');
        obj.divArrowDown.classList.remove('none');
        return;
@@ -97,7 +99,7 @@ function sliderGoDown(item) {
 
             setTimeout(() => {
                 item.previousElementSibling.classList.add('show');
-                }, 2000);
+                }, 1000);
             return true;
         }
     }
@@ -183,7 +185,7 @@ function buttonDown(event) {
 //--------------------------------------------------------------------------
 function mouseWheel(e) {
     let delta = e.deltaY || e.detail;
-    delta > 0 ? changeSliderUP() : changeSliderDOWN();
+    delta > 0 ? changeSliderDOWN() : changeSliderUP();
 
 }
 //-----------------------------------------------------------------------------------
@@ -214,35 +216,45 @@ function removeChange(item) {
 function choosePage(e) {
     let mass = obj.massSlides,
         id = this.id,
+        flag = false,
         len = mass.length;
 
 
-    for (let i = len-1; i >= 0; i--){
+    for (let i = len-1; i > 0; i--){
+
+
         if(id === 'Contacts') {
 
             closeMenu(mass[i]);
             modalWindow();
 
         }else{
+
             if(mass[i].id === id) {
+                obj.index = i;
+                flag = true;
+                setTimeout(()=>{
+                    mass[i].classList.add('show');
+
+                    }, 1000);
+                lastItemOfArr();
                 removeChange(mass[i]);
                 continue;
-            }
-            if(mass[i].classList.contains('show')) {
-                if (mass[i].previousElementSibling && mass[i].previousElementSibling !== obj.menuButton) {
+
+            }else {
+                if(flag){
+                    mass[i].classList.remove('show');
+                    mass[i].classList.add('up');
+                }else{
                     mass[i].classList.remove('show', 'up');
                     mass[i].classList.add('down');
-                    mass[i].previousElementSibling.classList.add('show');
-                    obj.index = i;
-
                 }
+                removeChange(mass[i]);
             }
-            lastItemOfArr();
-            removeChange(mass[i]);
-            startListener();
         }
     }
 
+    startListener();
 }
 //----------------------------------------------------------------------------------
 function closeMenu(item) {
@@ -304,9 +316,9 @@ function modalWindow(){
 }
 // --------------------------------------------------------
 obj.menuButton.addEventListener('click', menuShow);
+document.addEventListener('DOMContentLoaded', ()=> obj.modalWindow.classList.remove('none'));
 sliderContainer();
 startListener();
 arrowButtons();
-// modalWindow()
 
 
