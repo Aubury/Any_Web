@@ -80,7 +80,6 @@ function sliderGoUp(item) {
             item.classList.remove('show', 'up');
             item.nextElementSibling.classList.remove('down');
             item.nextElementSibling.classList.add('show', 'up');
-
             return true;
            }
         }
@@ -113,7 +112,9 @@ function changeSliderUP() {
 
     for (let i = 1; i < len-1; i++) {
         obj.index = i;
-        if(sliderGoUp(mass[i])) return;
+        if(sliderGoUp(mass[i])){
+            return;
+        }
     }
 }
 // ------------------------------------------------------------------------------------
@@ -184,14 +185,19 @@ function buttonDown(event) {
 }
 //--------------------------------------------------------------------------
 function mouseWheel(e) {
-    let delta = e.deltaY || e.detail;
-    delta > 0 ? changeSliderDOWN() : changeSliderUP();
 
+    let delta = e.deltaY || e.detail || e.wheelDelta;
+
+    delta > 0 ? changeSliderDOWN()
+              :  ( window.onmousewheel = null ,
+                   changeSliderUP(),
+                 setTimeout(()=> window.onmousewheel = mouseWheel, 500));
 }
 //-----------------------------------------------------------------------------------
 function startListener(){
     document.addEventListener('keydown', buttonDown);
-    window.addEventListener('wheel', mouseWheel);
+    // window.addEventListener('wheel', mouseWheel);
+    window.onmousewheel = mouseWheel;
 
     const container = obj.container;
     container.addEventListener("touchstart", startTouch, false);
