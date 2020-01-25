@@ -16,6 +16,10 @@ h1{
     background-color: #000068;
     color: aliceblue;
     transition-delay: 0.20s;
+    background-image: url("../img/backDark.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: bottom;
 }
 .slid2{
     background-color: rgba(67, 61, 154, 1);
