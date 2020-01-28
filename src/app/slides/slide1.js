@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import Cat from '../../img/cat.png';
-import Moon from '../../img/foolMoon+.png';
+import Moon from '../../img/Moon.png';
 import star from '../../img/star.png';
 import  Comment from '../../img/commentText.png';
 import snail from '../../img/grassSnail.png';
