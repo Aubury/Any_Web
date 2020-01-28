@@ -13,13 +13,12 @@ h1{
 }
 
 .slid1{
-    background-color: #000068;
+    background: url("../img/grass.png") repeat-x bottom,
+                url("../img/erslw.png") no-repeat bottom,
+                linear-gradient(to top, #af8230, #1a2b58, #121e3e 60%);
     color: aliceblue;
     transition-delay: 0.20s;
-    background-image: url("../img/backDark.png");
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: bottom;
+    background-size:auto,100% auto, auto;
 }
 .slid2{
     background-color: rgba(67, 61, 154, 1);

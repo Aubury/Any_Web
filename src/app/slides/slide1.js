@@ -1,8 +1,9 @@
 import _ from 'lodash';
 import Cat from '../../img/cat.png';
-import Moon from '../../img/moon2.png';
+import Moon from '../../img/foolMoon+.png';
 import star from '../../img/star.png';
 import  Comment from '../../img/commentText.png';
+import snail from '../../img/grassSnail.png';
 
 
 
@@ -17,7 +18,8 @@ const obj = {
     comm     : document.createElement('div'),
     Cat : new Image(),
     Moon: new Image(),
-    Comment : new Image()
+    Comment : new Image(),
+    Snail : new Image()
 }
 // -------------------------------------------------------------
 function addImage() {
@@ -34,6 +36,11 @@ function addImage() {
     obj.Comment.src = Comment;
     obj.Comment.alt = 'Comment';
     obj.comm.appendChild(obj.Comment);
+
+    obj.Snail.src = snail;
+    obj.Snail.alt = 'Snail';
+    obj.Snail.classList.add('grass');
+    obj.main.appendChild(obj.Snail);
 
 
 

@@ -65,6 +65,8 @@
 .blockMoon img{
       width: 90%;
       height: 90%;
+      max-width: 270px;
+      max-height: 270px;
       text-align: left;
 }
 .comment{
@@ -73,6 +75,13 @@
 .comment img{
     height: 50%;
     width: auto;
+}
+.grass{
+    width: auto;
+    height: 15%;
+    z-index: 99;
+    position: absolute;
+    top: calc(100% - 15%);
 }
 .star{
     position: absolute;
