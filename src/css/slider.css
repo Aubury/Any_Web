@@ -51,13 +51,6 @@ h1{
     0%{
         top: 0;
     }
-    /*40%{*/
-    /*    top:40vh;*/
-    /*}*/
-    /*60%{*/
-    /*    top:40vh;*/
-    /*}*/
-
     100% {
         top:100vh;
     }
@@ -146,10 +139,29 @@ h1{
     margin-top: 0;
     animation: moveButton 5s ease-in-out infinite;
 }
+
+/*---------------------------------------------------------------*/
+@media screen and (max-width: 1200px){
+    .slid1{
+        background-size: auto,140% 30%, auto;
+        background-position: bottom, 100% bottom;
+    }
+}
 /*--------------------------------------------------------------*/
 @media screen and (max-width: 900px) and (orientation: landscape) {
     .divArrowDown{
-            top: calc(100% - 20%);
-        }
+        top: calc(100% - 20%);
+    }
+    .slid1{
+        background-size: auto 15%,100% 35%, auto;
+        background-position: bottom, 100% bottom;
+    }
+}
+/*---------------------------------------------------------------*/
+@media screen and (max-width: 450px){
+    .slid1{
+        background-size: auto 15%,190% 25%, auto;
+        background-position: bottom, 100% bottom;
+    }
 }
 

@@ -152,6 +152,11 @@
         font-size: 3em;
         line-height: 80px;
     }
+    .blockMoon img{
+        max-width: 150px;
+        max-height: 150px;
+
+    }
 }
 /*--------------------------------------------------------------*/
 @media screen and (max-width: 800px) {
@@ -185,4 +190,9 @@
     .comment img {
         height: 40%;
     }
+    .grass{
+        height: 10%;
+        top: calc(100% - 10%);
+    }
+
 }
