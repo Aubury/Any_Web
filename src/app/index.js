@@ -13,9 +13,9 @@ const obj = {
     menuButton: document.querySelector('.menu-btn'),
     divArrowUp: document.querySelector('.divArrowUP'),
     divArrowDown: document.querySelector('.divArrowDown'),
-    modalWindow: document.querySelector('#modal'),
+    modalWindow: null,
     openModal  : document.querySelector('.contacts'),
-    closeModal : document.querySelector('.btn'),
+    closeModal : null,
     contacts   : document.querySelector('#Contacts'),
     ArrowUp   : new Image(),
     ArrowDown : new Image(),
@@ -230,7 +230,6 @@ function choosePage(e) {
 
 
         if(id === 'Contacts') {
-
             closeMenu(mass[i]);
             modalWindow();
 
@@ -302,12 +301,28 @@ function menuShow() {
     }
 }
 // -----------------------------------------------------------------------------------
-// Прослушка события смены ориентации
-// window.addEventListener("orientationchange", function(ev) {
-//     // Выводим числовое значение ориентации
-//     console.log(window.orientation);
-// }, false);
+function creatModalWindow() {
+    const div = document.createElement('div'),
+          str = `<div class="modalForm">
+                        <header>
+                            <h2>Свяжитесь с нами</h2>
+                        </header>
+                        <main>
+                            <p>Skype: _________________</p>
+                            <p>Vibe: __________________</p>
+                            <p>Telegram: ______________</p>
+                        </main>
+                        <footer>
+                            <a class="btn">Закрыть</a>
+                        </footer>
+                   </div>`;
 
+    div.setAttribute('id','modal');
+    div.innerHTML = str;
+    obj.modalWindow = div;
+    document.body.insertBefore(div,obj.container.nextElementSibling);
+    obj.closeModal = document.querySelector('.btn');
+}
 // -----------------------------------------------------------------------------------
 function modalWindow(){
     const modal = obj.modalWindow,
@@ -322,9 +337,14 @@ function modalWindow(){
 }
 // --------------------------------------------------------
 obj.menuButton.addEventListener('click', menuShow);
-document.addEventListener('DOMContentLoaded', ()=> obj.modalWindow.classList.remove('none'));
+window.addEventListener('resize', () => {
+    // We execute the same script as before
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
 sliderContainer();
-startListener();
+creatModalWindow();
 arrowButtons();
+startListener();
 
 
