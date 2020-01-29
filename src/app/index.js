@@ -10,6 +10,7 @@ import slid5 from "./slides/slide5";
 
 const obj = {
     container : document.querySelector('.container'),
+    // heightCont: window.screen.availHeight,
     menuButton: document.querySelector('.menu-btn'),
     divArrowUp: document.querySelector('.divArrowUP'),
     divArrowDown: document.querySelector('.divArrowDown'),
@@ -28,7 +29,6 @@ const obj = {
 function sliderContainer(){
 
     const cont = obj.container;
-
     cont.appendChild(slid5);
     cont.appendChild(slid4);
     cont.appendChild(slid3);
@@ -335,13 +335,11 @@ function modalWindow(){
         startListener();
     });
 }
+
 // --------------------------------------------------------
 obj.menuButton.addEventListener('click', menuShow);
-window.addEventListener('resize', () => {
-    // We execute the same script as before
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-});
+
+// -------------------------------------------------------------
 sliderContainer();
 creatModalWindow();
 arrowButtons();

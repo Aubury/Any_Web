@@ -1,14 +1,11 @@
-:root{
-    --vh: 100%;
-}
+
 /*-----------------------Slider---------------------------------------------------*/
 h1{
     cursor: pointer;
 }
 .slid{
-    width: 100vw !important;
-    /*height: 100vh;*/
-    height: calc(var(--vh, 1vh) * 100);
+    width: 100% !important;
+    height: 100% !important;
     position: absolute;
     top: 0;
     left:0;
@@ -45,11 +42,6 @@ h1{
     color: aliceblue;
     transition-delay: 0s;
 
-}
-.container {
-    height: 100vh !important;
-    position: relative;
-    overflow: hidden;
 }
 @keyframes slidDown{
     0%{
@@ -118,8 +110,6 @@ h1{
 .divArrowUP img {
     height: 90%;
     width: 90%;
-    /*transform: rotate(90deg);*/
-
 }
 .divArrowDown{
     position: absolute;
@@ -127,8 +117,8 @@ h1{
     height: 4em;
     transform: rotate(-90deg);
     padding: 8px 2px 2px 2px !important;
-    top: calc(100% - 13%);
-    left: calc(100vw - 6em);
+    top: calc(100% - 4em - 3em);
+    left: calc(100vw - 5em);
     border-radius: 50%;
     z-index: 99;
     outline:none;
@@ -154,7 +144,7 @@ h1{
 /*--------------------------------------------------------------*/
 @media screen and (max-width: 900px) and (orientation: landscape) {
     .divArrowDown{
-        top: calc(100% - 20%);
+        top: calc(100% - 4em - 1em);
     }
     .slid1{
         background-size: auto 15%,100% 35%, auto;

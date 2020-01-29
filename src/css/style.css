@@ -3,11 +3,21 @@
 @import "slide_1.css";
 @import "../fonts/font.css";
 @import "modal.css";
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+.container {
+    height: 100vh !important;
+    width: 100vw !important;
+    position: relative;
+    overflow: hidden;
+}
+
+
 .displayCenter{
     display: flex;
     justify-content: center;
@@ -40,26 +50,5 @@ h1{
     align-content: normal !important;
 }
 /*-------------------------------------------------------------------------------------------------*/
-/*@media screen and (orientation:landscape) and (max-device-width: 900px) {*/
-/*    html{*/
-/*        -webkit-transform: rotate(-90deg);*/
-/*        -moz-transform: rotate(-90deg);*/
-/*        -ms-transform: rotate(-90deg);*/
-/*        -o-transform: rotate(-90deg);*/
-/*        transform: rotate(-90deg);*/
-/*        -webkit-transform-origin: left top;*/
-/*        -moz-transform-origin: left top;*/
-/*        -ms-transform-origin: left top;*/
-/*        -o-transform-origin: left top;*/
-/*        transform-origin: left top;*/
-/*        max-width: 400px; !*Разрешение экрана iPhone*!*/
-/*        position: absolute;*/
-/*        top: 100%;*/
-/*        left: 0*/
-/*    }*/
-/*}*/
-/*-----------------------------------------------------------------------------------------------*/
-@media screen and (max-width: 600px) {
 
-}
 
