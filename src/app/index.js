@@ -10,7 +10,6 @@ import slid5 from "./slides/slide5";
 
 const obj = {
     container : document.querySelector('.container'),
-    // heightCont: window.screen.availHeight,
     menuButton: document.querySelector('.menu-btn'),
     divArrowUp: document.querySelector('.divArrowUP'),
     divArrowDown: document.querySelector('.divArrowDown'),
