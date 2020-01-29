@@ -1,4 +1,7 @@
+*{
+    box-sizing: border-box;
 
+}
 #modal {
     display: flex;
     align-content: center;

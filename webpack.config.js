@@ -1,22 +1,21 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
-const WebpackMd5Hash = require('webpack-md5-hash');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
         index: './src/app/index.js',
+        another: './src/app/another-module.js',
     },
     output: {
         path: path.resolve(__dirname,'dist'),
-        filename: '[name].[chunkhash].js',
+        filename: '[name].bundle.js',
       },
       optimization: {
         splitChunks: {
           chunks: 'all',
         },
-        runtimeChunk: true
       },
     devtool: 'inline-source-map',
     devServer: {
@@ -33,7 +32,10 @@ module.exports = {
             {
                 test: /\.css$/,
                 include: path.resolve(__dirname, 'src/css'),
-                use:  [  'style-loader', MiniCssExtractPlugin.loader, 'css-loader']
+                use:[
+                    'style-loader',
+                    'css-loader'
+                ],
             },
             {
                 test: /\.(gif|png|jpe?g|svg)$/i,
@@ -43,12 +45,13 @@ module.exports = {
                     {
                         loader: 'image-webpack-loader',
                         options: {
-                            filename:  'img/[name].[chunkhash].[ext]',
+                            name:  'img/[name].[ext]',
                             context: '',
                             mozjpeg: {
                                 progressive: true,
                                 quality: 65
                             },
+                            // optipng.enabled: false will disable optipng
                             optipng: {
                                 enabled: false,
                             },
@@ -59,10 +62,18 @@ module.exports = {
                             gifsicle: {
                                 interlaced: false,
                             },
+                            // the webp option will enable WEBP
                             webp: {
                                 quality: 75
                             }
                         }
+                        // options: {
+                        //     bypassOnDebug: true, // webpack@1.x
+                        //     disable: true, // webpack@2.x and newer
+                        //     name:  'img/[name].[ext]',
+                        //     context: ''
+                        // },
+
                     },
                 ],
             },
@@ -86,18 +97,16 @@ module.exports = {
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin({
-            filename: 'style.[contenthash].css',
-        }),
+        // new HtmlWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: 'Any Web',
             template: path.resolve(__dirname, 'src/html', 'index.html'),
             filename: 'index.html',
             inject: true,
-            inlineSource: '.(js|css)$'
+            inlineSource: '.(js|css)$' // embed all javascript and css inline
 
         }),
         new HtmlWebpackInlineSourcePlugin(),
-        new WebpackMd5Hash()
+        new ExtractTextPlugin("[name].css") //Extract to styles.css file
       ]
 }
