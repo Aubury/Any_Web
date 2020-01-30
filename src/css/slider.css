@@ -15,7 +15,7 @@ h1{
 
 .slid1{
     background: url("../img/grass.png") repeat-x bottom,
-                url("../img/erslw.png") no-repeat bottom,
+                url("../img/backGround.png") no-repeat bottom,
                 linear-gradient(to top, #af8230, #1a2b58, #121e3e 60%);
     color: aliceblue;
     transition-delay: 0.20s;
