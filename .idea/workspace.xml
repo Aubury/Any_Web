@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42156913-cb6d-4eb4-b927-6ff6651f61cf" name="Default Changelist" comment="" />
+    <list default="true" id="42156913-cb6d-4eb4-b927-6ff6651f61cf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/css/slide_4.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/backGround.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/vendors~index.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/vendors~index.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/slides/slide1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/slides/slide1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/slides/slide4.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/slides/slide4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/slide_1.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/slide_1.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/slider.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style.css" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +33,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -105,8 +119,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.build" />
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.clear" />
+        <item itemvalue="npm.dev" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -166,7 +180,9 @@
       <workItem from="1580189464534" duration="21038000" />
       <workItem from="1580276673271" duration="18005000" />
       <workItem from="1580330461162" duration="763000" />
-      <workItem from="1580361442811" duration="2708000" />
+      <workItem from="1580361442811" duration="5619000" />
+      <workItem from="1580386480120" duration="29120000" />
+      <workItem from="1580450307013" duration="40773000" />
     </task>
     <servers />
   </component>

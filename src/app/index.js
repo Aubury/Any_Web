@@ -10,7 +10,6 @@ import slid5 from "./slides/slide5";
 
 const obj = {
     container : document.querySelector('.container'),
-    // heightCont: window.screen.availHeight,
     menuButton: document.querySelector('.menu-btn'),
     divArrowUp: document.querySelector('.divArrowUP'),
     divArrowDown: document.querySelector('.divArrowDown'),
@@ -161,9 +160,12 @@ function moveTouch(e) {
             // sliding vertically
             if (diffY > 0) {
                 // swiped up
+                console.log('Up' + diffY);
                 changeSliderUP();
             } else {
                 // swiped down
+                console.log('Down' + diffY);
+
                 changeSliderDOWN();
             }
         }
@@ -221,6 +223,7 @@ function removeChange(item) {
 //---------------------------------------------------------------------------------
 function choosePage(e) {
     let mass = obj.massSlides,
+        container = obj.container,
         id = this.id,
         flag = false,
         len = mass.length;
@@ -236,6 +239,11 @@ function choosePage(e) {
         }else{
 
             if(mass[i].id === id) {
+                if(mass[i].id === 'Templates' && window.screen.width < 800){
+
+                    container.removeEventListener("touchstart", startTouch);
+                    container.removeEventListener("touchmove", moveTouch);
+                }
                 obj.index = i;
                 flag = true;
                 setTimeout(()=>{
@@ -335,14 +343,15 @@ function modalWindow(){
         startListener();
     });
 }
-
 // --------------------------------------------------------
 obj.menuButton.addEventListener('click', menuShow);
-
 // -------------------------------------------------------------
 sliderContainer();
 creatModalWindow();
 arrowButtons();
 startListener();
+
+export {startTouch, moveTouch};
+
 
 

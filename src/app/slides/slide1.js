@@ -5,8 +5,6 @@ import star from '../../img/star.png';
 import  Comment from '../../img/commentText.png';
 import snail from '../../img/grassSnail.png';
 
-
-
 const obj = {
     slide    : document.createElement('div'),
     main     : document.createElement('div'),
@@ -16,8 +14,11 @@ const obj = {
     blockMoon: document.createElement('div'),
     cat      : document.createElement('div'),
     comm     : document.createElement('div'),
-    Cat : new Image(),
-    Moon: new Image(),
+    wordsBlock: document.createElement('div'),
+    inblWords : document.createElement('div'),
+    left : 30,
+    Cat  : new Image(),
+    Moon : new Image(),
     Comment : new Image(),
     Snail : new Image()
 }
@@ -41,8 +42,6 @@ function addImage() {
     obj.Snail.alt = 'Snail';
     obj.Snail.classList.add('grass');
     obj.main.appendChild(obj.Snail);
-
-
 
 }
 //-------------------------------------------------------------
@@ -72,7 +71,7 @@ function moveClouds() {
             el.style.left = '-' + (el.clientWidth + 500) + 'px';
         }else{
             el.classList.remove('none');
-            el.style.left = (el.offsetLeft + 10) + 'px';
+            el.style.left = (el.offsetLeft + 50) + 'px';
         }
     })
 }
@@ -138,7 +137,47 @@ function stars() {
 
     }
 }
+//-------------------------------------------------------------
+// function createSpan(value) {
+//     let span = document.createElement('span');
+//     span.innerHTML =  value;
+//     obj.inblWords.appendChild(span);
+//     span.classList.add('moveW')
+//     setTimeout(()=>{span.remove();},6000);
+// }
+//--------------------------------------------------------------
+// function words() {
+//     let massWords = ['&lt;b>', '&lt;h1>', '&lt;div>', '&lt;p>'],
+//         div = obj.inblWords,
+        // left = 0,
+        // p = document.createElement('p'),
+        // index = Math.floor(Math.random() * massWords.length),
+        // len = Math.floor(Math.random() * (5 - 2) + 2),
+        // num = Math.floor(Math.random() * (135 - 60) + 60);
 
+        // num < 90 ? left = Math.floor(Math.random() * (90 - 45) + 45):
+        //            left = Math.floor(Math.random() * (125 - 90) + 90);
+       // document.documentElement.style.setProperty('--left', `${num}%`);
+       // document.documentElement.style.setProperty('--num', `${num}deg`);
+
+
+           // for (let i = 0; i < len; i++) {
+               // createSpan(massWords[index]);
+               // let span = document.createElement('span');
+               //     span.innerHTML = `${massWords[index]}`;
+               //    div.appendChild(span);
+                   // span.style.left = num + '%';
+                   // span.style.marginTop = '-50px';
+
+                   // span.classList.add('moveW');
+
+               // setTimeout(()=>{span.remove();},6000);
+
+           // }
+
+    // span.style.transform = `rotate(${num}deg)`;
+
+// }
 
 // --------------------------------------------------------------
 function container() {
@@ -148,6 +187,8 @@ function container() {
           bttmBl = obj.bottomBlock,
           blockCat = obj.blockCat,
           blockMoon = obj.blockMoon,
+          blockWords = obj.wordsBlock,
+          inblW = obj.inblWords,
           name = document.createElement('h1'),
           cat = obj.cat,
           comm = obj.comm;
@@ -181,6 +222,9 @@ function container() {
     blockMoon.classList.add('blockMoon');
     topBl.appendChild(blockMoon);
 
+    blockWords.classList.add('wordsBlock');
+    blockWords.appendChild(inblW);
+    bttmBl.appendChild(blockWords);
 
     addImage();
     stars();
@@ -188,11 +232,10 @@ function container() {
     setInterval(changePositionStars, 20000);
     setInterval(moveClouds,0);
     setInterval(moveMoon,10000);
+    setInterval(moveMoon,10000);
+    // setInterval(words, 10000);
 
 }
 
 container();
-
-
-
 export default obj.slide;
