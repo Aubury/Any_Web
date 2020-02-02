@@ -71,7 +71,7 @@ function moveClouds() {
             el.style.left = '-' + (el.clientWidth + 500) + 'px';
         }else{
             el.classList.remove('none');
-            el.style.left = (el.offsetLeft + 50) + 'px';
+            el.style.left = (el.offsetLeft + 10) + 'px';
         }
     })
 }

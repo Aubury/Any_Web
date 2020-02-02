@@ -7,7 +7,7 @@ import Temp_5 from '../../img/template_5-min.png';
 import Temp_6 from '../../img/template_6-min.png';
 import Temp_7 from '../../img/template_7-min.png';
 import Temp_8 from '../../img/template_8-min.png';
-import {startTouch, moveTouch} from '../index';
+import {startListener, stopListener} from '../index';
 
 const obj = {
     slide : document.createElement('div'),
@@ -59,8 +59,13 @@ function Images() {
 // --------------------------------------------------------
 function resizeImage(e) {
 
-    this.classList.contains('resize')? this.classList.remove('resize')
-                                    :this.classList.add('resize');
+    if( document.innerWidth < 1000){
+        this.classList.contains('resize')? this.classList.remove('resize')
+                                         :this.classList.add('resize');
+    }else {
+        this.removeEventListener('click',resizeImage);
+    }
+
 }
 // -------------------------------------------------------
 function templates() {
@@ -70,25 +75,17 @@ function templates() {
             div.classList.add('template');
             div.style.backgroundImage = `url("${obj.massImages[i].src}")`;
             obj.main.appendChild(div);
+
             div.addEventListener('click',resizeImage);
-            window.screen.width > 800 ? div.addEventListener('click',resizeImage)
-                                : div.removeEventListener('click',resizeImage);
     }
 
 }
 // ----------------------------------------------------------------------
 function scrollTemplate(){
 
-    let parent = obj.main.parentElement.parentElement;
     if(obj.main.scrollHeight - obj.main.scrollTop === obj.main.clientHeight){
-       parent.addEventListener("touchstart", startTouch);
-       parent.addEventListener("touchmove", moveTouch);
-
-   }else {
-       parent.removeEventListener("touchstart", startTouch);
-       parent.removeEventListener("touchmove", moveTouch);
-   }
-
+        startListener();
+    }
 }
 // -------------------------------------------------------
 function container() {
@@ -108,7 +105,6 @@ function container() {
     container.appendChild(main);
     Images();
     templates();
-
 
     main.addEventListener('scroll', scrollTemplate);
 

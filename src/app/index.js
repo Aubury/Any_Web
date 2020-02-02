@@ -79,6 +79,10 @@ function sliderGoUp(item) {
             item.classList.remove('show', 'up');
             item.nextElementSibling.classList.remove('down');
             item.nextElementSibling.classList.add('show', 'up');
+
+            if(item.nextElementSibling.id === 'Templates'){
+              screenWidth();
+            }
             return true;
            }
         }
@@ -98,6 +102,9 @@ function sliderGoDown(item) {
             setTimeout(() => {
                 item.previousElementSibling.classList.add('show');
                 }, 1000);
+            if(item.previousElementSibling.id === 'Templates'){
+                screenWidth();
+            }
             return true;
         }
     }
@@ -198,12 +205,11 @@ function mouseWheel(e) {
 //-----------------------------------------------------------------------------------
 function startListener(){
     document.addEventListener('keydown', buttonDown);
-    // window.addEventListener('wheel', mouseWheel);
     window.onmousewheel = mouseWheel;
 
     const container = obj.container;
-    container.addEventListener("touchstart", startTouch, false);
-    container.addEventListener("touchmove", moveTouch, false);
+    container.addEventListener("touchstart", startTouch);
+    container.addEventListener("touchmove", moveTouch);
 }
 //-----------------------------------------------------------------------------------
 function stopListener(){
@@ -220,10 +226,17 @@ function removeChange(item) {
     item.style.borderRadius = `0`;
     item.classList.remove('menuOpen');
 }
+// --------------------------------------------------------------------------------
+function screenWidth() {
+    const container = obj.container;
+    if( window.screen.width < 1000){
+        stopListener();
+    }
+}
 //---------------------------------------------------------------------------------
 function choosePage(e) {
     let mass = obj.massSlides,
-        container = obj.container,
+        // container = obj.container,
         id = this.id,
         flag = false,
         len = mass.length;
@@ -231,23 +244,19 @@ function choosePage(e) {
 
     for (let i = len-1; i > 0; i--){
 
-
         if(id === 'Contacts') {
             closeMenu(mass[i]);
             modalWindow();
 
         }else{
-
             if(mass[i].id === id) {
-                if(mass[i].id === 'Templates' && window.screen.width < 800){
-
-                    container.removeEventListener("touchstart", startTouch);
-                    container.removeEventListener("touchmove", moveTouch);
-                }
                 obj.index = i;
                 flag = true;
                 setTimeout(()=>{
                     mass[i].classList.add('show');
+                        if(mass[i].id === 'Templates'){
+                            screenWidth() ;
+                        }
 
                     }, 1000);
                 lastItemOfArr();
@@ -351,7 +360,7 @@ creatModalWindow();
 arrowButtons();
 startListener();
 
-export {startTouch, moveTouch};
+export {startTouch, moveTouch, startListener, stopListener};
 
 
 
