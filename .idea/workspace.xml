@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="42156913-cb6d-4eb4-b927-6ff6651f61cf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/slide_1.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/slide_1.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -108,9 +110,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.clear" />
         <item itemvalue="npm.dev" />
         <item itemvalue="npm.start" />
-        <item itemvalue="npm.clear" />
       </list>
     </recent_temporary>
   </component>
@@ -173,7 +175,7 @@
       <workItem from="1580386480120" duration="29120000" />
       <workItem from="1580450307013" duration="41003000" />
       <workItem from="1580626840806" duration="16484000" />
-      <workItem from="1580707671718" duration="7478000" />
+      <workItem from="1580707671718" duration="8062000" />
     </task>
     <servers />
   </component>

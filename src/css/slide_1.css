@@ -290,11 +290,23 @@
         z-index: 99;
     }
 }
+/*---------------------------------------------------------------*/
 @media screen and (max-width: 570px) and (orientation: landscape) {
     .wordsBlock{
         width: 20%;
         left: calc(100% - 20%);
         top: calc(100% - 30% - 30%);
+    }
+    .wordsBlock span{
+        font-size: 12px;
+    }
+}
+/*---------------------------------------------------------------*/
+@media screen and (max-width: 420px){
+    .wordsBlock{
+        width: 40%;
+        left: calc(100% - 45%);
+        /*top: calc(100% - 30% - 30%);*/
     }
     .wordsBlock span{
         font-size: 12px;
