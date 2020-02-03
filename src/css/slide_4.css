@@ -1,44 +1,71 @@
-h2{
-    cursor: pointer;
-    font-family: "Segoe Print Bold";
-    font-size: 2em;
-    text-align: center;
-    color: #000068;
-}
 .main{
     width: 100%;
     height: 95%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     position: relative;
-    top:5%;
+    top:2%;
+    padding: 30px 20px;
 
 }
 .template{
-    width: 26em;
-    height: 13em;
+    width: calc((100% / 3) - 7%);
+    height: 16em;
     border: 3px solid #000068;
     border-radius: 5px;
-    margin: 10px;
+    /*margin: 10px;*/
     background-size: cover;
     background-repeat: no-repeat;
     transition: 1s;
     cursor: pointer;
 
 }
-.resize{
-    position: absolute;
-    width: 80%;
-    height: 80%;
-    left: 10%;
-    top: 5%;
+/*.resize{*/
+/*    position: absolute;*/
+/*    width: 80%;*/
+/*    height: 80%;*/
+/*    left: 10%;*/
+/*    top: 5%;*/
+/*}*/
+@media screen and (max-width: 1400px) and (orientation: landscape) {
+    .template {
+        width: calc((100% / 3) - 2%);
+        height: 15em;
+    }
 }
 /*-----------------------------------------------------------*/
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1300px) {
+    .template {
+        width: calc((100% / 3) - 5%);
+        height: 13em;
+    }
+}
+/*-----------------------------------------------------------*/
+@media screen and (max-width: 1050px) {
     .main{
-        overflow-y: auto;
-        -webkit-overflow-scrolling:touch;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling:touch !important;
+        padding-top: 10px;
+
+    }
+    .template {
+        width: calc((100% / 2) - 5%);
+        height: auto;
+        margin: 10px;
+    }
+}
+/*---------------------------------------------------------------*/
+@media screen and (max-width: 1050px) and (orientation: landscape) {
+    .main{
+        overflow-y: scroll;
+        -webkit-overflow-scrolling:touch !important;
+
+    }
+    .template {
+        width: calc((100% / 2) - 5%);
+        height: 15em;
+        margin: 10px;
     }
 }
 /*-----------------------------------------------------------*/
@@ -48,6 +75,21 @@ h2{
         height: 20em;
     }
 
+}
+/*-----------------------------------------------------------*/
+@media screen and (max-width: 740px)  and (orientation: landscape){
+    .template{
+        width: 35em;
+        height: 17em;
+    }
+
+}
+/*-----------------------------------------------------------*/
+@media screen and (max-width: 700px)  and (orientation: landscape){
+    .template{
+        width: 35em;
+        height: 17em;
+    }
 }
 /*----------------------------------------------------------*/
 @media screen and (max-width: 600px) {

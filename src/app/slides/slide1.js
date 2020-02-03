@@ -146,38 +146,38 @@ function stars() {
 //     setTimeout(()=>{span.remove();},6000);
 // }
 //--------------------------------------------------------------
-// function words() {
-//     let massWords = ['&lt;b>', '&lt;h1>', '&lt;div>', '&lt;p>'],
-//         div = obj.inblWords,
-        // left = 0,
-        // p = document.createElement('p'),
-        // index = Math.floor(Math.random() * massWords.length),
-        // len = Math.floor(Math.random() * (5 - 2) + 2),
-        // num = Math.floor(Math.random() * (135 - 60) + 60);
+function words() {
+    let massWords = ['&lt;b>', '&lt;h1>', '&lt;div>', '&lt;p>'],
+        div = obj.inblWords,
+        left = 0,
+        p = document.createElement('p'),
+        index = Math.floor(Math.random() * massWords.length),
+        len = Math.floor(Math.random() * (5 - 2) + 2),
+        num = Math.floor(Math.random() * (135 - 60) + 60);
 
-        // num < 90 ? left = Math.floor(Math.random() * (90 - 45) + 45):
-        //            left = Math.floor(Math.random() * (125 - 90) + 90);
-       // document.documentElement.style.setProperty('--left', `${num}%`);
-       // document.documentElement.style.setProperty('--num', `${num}deg`);
+        num < 90 ? left = Math.floor(Math.random() * (90 - 45) + 45):
+                   left = Math.floor(Math.random() * (125 - 90) + 90);
+       document.documentElement.style.setProperty('--left', `${left}%`);
+       document.documentElement.style.setProperty('--num', `${num}deg`);
 
 
-           // for (let i = 0; i < len; i++) {
+           for (let i = 0; i < len; i++) {
                // createSpan(massWords[index]);
-               // let span = document.createElement('span');
-               //     span.innerHTML = `${massWords[index]}`;
-               //    div.appendChild(span);
+               let span = document.createElement('span');
+                   span.innerHTML = `${massWords[index]}`;
+                   div.appendChild(span);
                    // span.style.left = num + '%';
-                   // span.style.marginTop = '-50px';
+                   // span.style.top = '110%';
 
-                   // span.classList.add('moveW');
+                   span.classList.add('moveW');
 
-               // setTimeout(()=>{span.remove();},6000);
+               setTimeout(()=>{span.remove();},10000);
 
-           // }
+           }
 
     // span.style.transform = `rotate(${num}deg)`;
 
-// }
+}
 
 // --------------------------------------------------------------
 function container() {
@@ -233,7 +233,7 @@ function container() {
     setInterval(moveClouds,0);
     setInterval(moveMoon,10000);
     setInterval(moveMoon,10000);
-    // setInterval(words, 10000);
+    setInterval(words, 5000);
 
 }
 

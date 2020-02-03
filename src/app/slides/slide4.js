@@ -55,28 +55,33 @@ function Images() {
         temp_8.src = Temp_8;
         temp_8.alt = 'Template';
         obj.massImages.push(temp_8);
+
+    let temp_9 = new Image();
+        temp_9.src = Temp_1;
+        temp_9.alt = 'Template';
+        obj.massImages.push(temp_9);
 }
 // --------------------------------------------------------
-function resizeImage(e) {
-
-    if( document.innerWidth < 1000){
-        this.classList.contains('resize')? this.classList.remove('resize')
-                                         :this.classList.add('resize');
-    }else {
-        this.removeEventListener('click',resizeImage);
-    }
-
-}
+// function resizeImage(e) {
+//
+//     if( document.innerWidth < 1000){
+//         this.classList.contains('resize')? this.classList.remove('resize')
+//                                          :this.classList.add('resize');
+//     }else {
+//         this.removeEventListener('click',resizeImage);
+//     }
+//
+// }
 // -------------------------------------------------------
 function templates() {
 
-    for (let i = 0; i < 8; i++){
+    for (let i = 0; i < 9; i++){
         let div = document.createElement('div');
             div.classList.add('template');
             div.style.backgroundImage = `url("${obj.massImages[i].src}")`;
             obj.main.appendChild(div);
 
-            div.addEventListener('click',resizeImage);
+            // div.addEventListener('click',resizeImage);
     }
 
 }

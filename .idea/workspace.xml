@@ -8,8 +8,14 @@
       <change beforePath="$PROJECT_DIR$/dist/vendors~index.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/vendors~index.bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/slides/slide1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/slides/slide1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/slides/slide2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/slides/slide2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/slides/slide3.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/slides/slide3.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/slides/slide4.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/slides/slide4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/slides/slide5.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/slides/slide5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/slide_1.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/slide_1.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/slide_4.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/slide_4.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/slider.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,8 +121,8 @@
       <list>
         <item itemvalue="npm.build" />
         <item itemvalue="npm.dev" />
-        <item itemvalue="npm.clear" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.clear" />
       </list>
     </recent_temporary>
   </component>
@@ -178,7 +184,8 @@
       <workItem from="1580361442811" duration="5619000" />
       <workItem from="1580386480120" duration="29120000" />
       <workItem from="1580450307013" duration="41003000" />
-      <workItem from="1580626840806" duration="7261000" />
+      <workItem from="1580626840806" duration="16484000" />
+      <workItem from="1580707671718" duration="5496000" />
     </task>
     <servers />
   </component>

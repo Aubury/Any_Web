@@ -34,6 +34,13 @@ h1{
     font-family: "Segoe Print Bold";
     font-size: 2em;
 }
+h2{
+    cursor: pointer;
+    font-family: "Segoe Print Bold";
+    font-size: 2em;
+    text-align: center;
+    margin-top: 20px;
+}
 /*----------------------------------------------------------------------------------------------*/
 .menu-btn {
     position: absolute;

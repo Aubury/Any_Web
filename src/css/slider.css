@@ -1,8 +1,5 @@
 
 /*-----------------------Slider---------------------------------------------------*/
-h1{
-    cursor: pointer;
-}
 .slid{
     width: 100% !important;
     height: 100% !important;
@@ -33,13 +30,14 @@ h1{
 }
 .slid4{
     background-color: #f3ff86;
-    color: #36383f;
+    /*color: #36383f;*/
+    color: #000068;
     transition-delay: 0.05s;
 
 }
 .slid5{
     background-color: #000068;
-    color: aliceblue;
+    color: aliceblue !important;
     transition-delay: 0s;
 
 }

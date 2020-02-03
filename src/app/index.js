@@ -214,7 +214,8 @@ function startListener(){
 //-----------------------------------------------------------------------------------
 function stopListener(){
     document.removeEventListener('keydown', buttonDown);
-    window.removeEventListener('wheel', mouseWheel);
+    // window.removeEventListener('wheel', mouseWheel);
+    window.onmousewheel = null;
 
     const container = obj.container;
     container.removeEventListener("touchstart", startTouch);
@@ -257,8 +258,7 @@ function choosePage(e) {
                         if(mass[i].id === 'Templates'){
                             screenWidth() ;
                         }
-
-                    }, 1000);
+                  }, 1000);
                 lastItemOfArr();
                 removeChange(mass[i]);
                 continue;
@@ -300,7 +300,8 @@ function menuShow() {
 
         if(!mass[i].style.transform || mass[i].style.transform === 'none'){
             if(i){
-                transForm += 80;
+                window.screen.width < 1000 ? transForm += 70 : transForm += 80;
+
                 mass[i].style.borderRadius = `8px 8px 0 0`;
                 mass[i].style.transform = `translateY(${transForm}px)`;
 
