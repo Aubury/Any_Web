@@ -7,12 +7,12 @@ import Temp_5 from '../../img/template_5-min.png';
 import Temp_6 from '../../img/template_6-min.png';
 import Temp_7 from '../../img/template_7-min.png';
 import Temp_8 from '../../img/template_8-min.png';
-import {startListener, stopListener} from '../index';
 
 const obj = {
     slide : document.createElement('div'),
     main  : document.createElement('div'),
-    massImages : []
+    massImages : [],
+
 }
 // --------------------------------------------------------------------
 function Images() {
@@ -85,13 +85,7 @@ function templates() {
     }
 
 }
-// ----------------------------------------------------------------------
-function scrollTemplate(){
 
-    if(obj.main.scrollHeight - obj.main.scrollTop === obj.main.clientHeight){
-        startListener();
-    }
-}
 // -------------------------------------------------------
 function container() {
     const container = obj.slide,
@@ -110,9 +104,6 @@ function container() {
     container.appendChild(main);
     Images();
     templates();
-
-    main.addEventListener('scroll', scrollTemplate);
-
 }
 container();
 

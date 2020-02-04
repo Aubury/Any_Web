@@ -5,7 +5,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/slides/slide1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/slides/slide1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/slides/slide4.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/slides/slide4.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/slide_1.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/slide_1.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/slide_4.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/slide_4.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,8 +115,8 @@
       <list>
         <item itemvalue="npm.build" />
         <item itemvalue="npm.clear" />
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -175,7 +179,8 @@
       <workItem from="1580386480120" duration="29120000" />
       <workItem from="1580450307013" duration="41003000" />
       <workItem from="1580626840806" duration="16484000" />
-      <workItem from="1580707671718" duration="8062000" />
+      <workItem from="1580707671718" duration="24965000" />
+      <workItem from="1580801565819" duration="3207000" />
     </task>
     <servers />
   </component>

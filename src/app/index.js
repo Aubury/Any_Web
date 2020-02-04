@@ -17,6 +17,7 @@ const obj = {
     openModal  : document.querySelector('.contacts'),
     closeModal : null,
     contacts   : document.querySelector('#Contacts'),
+    template  : document.querySelector('#Templates'),
     ArrowUp   : new Image(),
     ArrowDown : new Image(),
     massSlides: [],
@@ -80,9 +81,6 @@ function sliderGoUp(item) {
             item.nextElementSibling.classList.remove('down');
             item.nextElementSibling.classList.add('show', 'up');
 
-            if(item.nextElementSibling.id === 'Templates'){
-              screenWidth();
-            }
             return true;
            }
         }
@@ -102,9 +100,7 @@ function sliderGoDown(item) {
             setTimeout(() => {
                 item.previousElementSibling.classList.add('show');
                 }, 1000);
-            if(item.previousElementSibling.id === 'Templates'){
-                screenWidth();
-            }
+
             return true;
         }
     }
@@ -134,6 +130,29 @@ function changeSliderDOWN() {
     }
 
 }
+// ---------------------------------------------------------------------------------
+function scrollEnd(item) {
+
+    if(item.scrollHeight - item.scrollTop === item.clientHeight){
+        return true;
+    }
+    return false;
+}
+// --------------------------------------------------------------------------------
+function scrollTemplate() {
+
+    let template = slid4,
+        main = template.querySelector('.main');
+
+    document.ontouchstart = null;
+    document.ontouchmove = null;
+
+    if(scrollEnd(main)){
+            document.ontouchstart = startTouch;
+            document.ontouchmove = moveTouch;
+        }
+}
+
 //---------------------Swipe Up / Down / Left / Right-------------------------------------------------------------
 function startTouch(e) {
        obj.initialX = e.touches[0].clientX;
@@ -154,25 +173,36 @@ function moveTouch(e) {
         let diffX = obj.initialX - currentX,
             diffY = obj.initialY - currentY;
 
+
+
         if (Math.abs(diffX) > Math.abs(diffY)) {
             // sliding horizontally
             if (diffX > 0) {
                 // swiped left
-                // console.log("swiped left");
             } else {
                 // swiped right
-                // console.log("swiped right");
             }
         } else {
             // sliding vertically
             if (diffY > 0) {
                 // swiped up
-                console.log('Up' + diffY);
-                changeSliderUP();
+                if( window.screen.width < 1000) {
+                  if(document.documentElement.children[1].firstElementChild.children[4].classList.contains('show')){
+                      let template = document.documentElement.children[1].firstElementChild.children[4],
+                          main = template.lastElementChild;
+                      if (scrollEnd(main)){
+                          changeSliderUP();
+                      }
+                  }else {
+                      changeSliderUP();
+                  }
+
+                }else {
+                    changeSliderUP();
+                }
+
             } else {
                 // swiped down
-                console.log('Down' + diffY);
-
                 changeSliderDOWN();
             }
         }
@@ -180,7 +210,7 @@ function moveTouch(e) {
         obj.initialX = null;
         obj.initialY = null;
 
-        e.preventDefault();
+        // e.preventDefault();
 }
 //----------------------------------------------------------------------------
 function buttonDown(event) {
@@ -204,22 +234,23 @@ function mouseWheel(e) {
 }
 //-----------------------------------------------------------------------------------
 function startListener(){
-    document.addEventListener('keydown', buttonDown);
+    document.onkeydown = buttonDown;
     window.onmousewheel = mouseWheel;
+    document.ontouchstart = startTouch;
+    document.ontouchmove = moveTouch;
 
-    const container = obj.container;
-    container.addEventListener("touchstart", startTouch);
-    container.addEventListener("touchmove", moveTouch);
+    if( window.screen.width < 1000) {
+        let template = slid4,
+            main = template.querySelector('.main');
+        main.addEventListener('scroll', scrollTemplate);
+    }
 }
 //-----------------------------------------------------------------------------------
 function stopListener(){
-    document.removeEventListener('keydown', buttonDown);
-    // window.removeEventListener('wheel', mouseWheel);
+    document.onkeydown = null;
     window.onmousewheel = null;
-
-    const container = obj.container;
-    container.removeEventListener("touchstart", startTouch);
-    container.removeEventListener("touchmove", moveTouch);
+    document.ontouchstart = null;
+    document.ontouchmove = null;
 }
 //--------------------------------------------------------------------------------
 function removeChange(item) {
@@ -227,17 +258,10 @@ function removeChange(item) {
     item.style.borderRadius = `0`;
     item.classList.remove('menuOpen');
 }
-// --------------------------------------------------------------------------------
-function screenWidth() {
-    const container = obj.container;
-    if( window.screen.width < 1000){
-        stopListener();
-    }
-}
+
 //---------------------------------------------------------------------------------
 function choosePage(e) {
     let mass = obj.massSlides,
-        // container = obj.container,
         id = this.id,
         flag = false,
         len = mass.length;
@@ -255,9 +279,6 @@ function choosePage(e) {
                 flag = true;
                 setTimeout(()=>{
                     mass[i].classList.add('show');
-                        if(mass[i].id === 'Templates'){
-                            screenWidth() ;
-                        }
                   }, 1000);
                 lastItemOfArr();
                 removeChange(mass[i]);
@@ -361,7 +382,6 @@ creatModalWindow();
 arrowButtons();
 startListener();
 
-export {startTouch, moveTouch, startListener, stopListener};
 
 
 

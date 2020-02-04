@@ -137,14 +137,6 @@ function stars() {
 
     }
 }
-//-------------------------------------------------------------
-// function createSpan(value) {
-//     let span = document.createElement('span');
-//     span.innerHTML =  value;
-//     obj.inblWords.appendChild(span);
-//     span.classList.add('moveW')
-//     setTimeout(()=>{span.remove();},6000);
-// }
 //--------------------------------------------------------------
 function words() {
     let massWords = ['&lt;b>', '&lt;h1>', '&lt;div>', '&lt;p>'],
@@ -162,7 +154,6 @@ function words() {
 
 
            for (let i = 0; i < len; i++) {
-               // createSpan(massWords[index]);
                let span = document.createElement('span');
                    span.innerHTML = `${massWords[index]}`;
                    div.appendChild(span);
