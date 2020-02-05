@@ -6,7 +6,10 @@
     justify-content: space-around;
     position: relative;
     top:2%;
-    padding: 30px 20px;
+    border: solid #f3ff86;
+    border-width: 20px 10px 50px 10px;
+    border-radius: 2%;
+    overflow: hidden;
 
 }
 .template{
@@ -27,6 +30,7 @@
 /*    left: 10%;*/
 /*    top: 5%;*/
 /*}*/
+/*----------------------------------------------------------*/
 @media screen and (max-width: 1400px) and (orientation: landscape) {
     .template {
         width: calc((100% / 3) - 2%);

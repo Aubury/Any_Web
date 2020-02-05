@@ -30,7 +30,6 @@
 }
 .slid4{
     background-color: #f3ff86;
-    /*color: #36383f;*/
     color: #000068;
     transition-delay: 0.05s;
 
@@ -60,13 +59,14 @@
 .down{
     top: 100vh;
     animation: 1.2s ease-in-out slidDown;
+
 }
 .up{
     top: 0;
     animation: 1s ease-in-out slidUp;
 }
 .show {
-    z-index: 9;
+    z-index: 150;
     position: absolute;
     top: 0;
     left: 0;
@@ -100,9 +100,9 @@
     height: 4em;
     padding: 8px 2px 2px 2px !important;
     top:.5em;
-    left: calc(100vw - 6em);
+    left: calc(100vw - 5em);
     border-radius: 50%;
-    z-index: 99;
+    z-index: 200;
     outline:none;
 }
 .divArrowUP img {
@@ -118,7 +118,7 @@
     top: calc(100% - 4em - 3em);
     left: calc(100vw - 5em);
     border-radius: 50%;
-    z-index: 99;
+    z-index: 200;
     outline:none;
 }
 .divArrowDown img {
@@ -139,6 +139,21 @@
         background-position: bottom, 100% bottom;
     }
 }
+/*---------------------------------------------------------------*/
+@media screen and (max-width: 1100px){
+    .slid{
+        transition:  .6s linear;
+    }
+    .downW{
+        top: 0;
+        /*animation: 1.2s ease-in-out slidUp;*/
+
+    }
+    .upW{
+        top: -100vh;
+        /*animation: 1s ease-in-out slidDown;*/
+    }
+}
 /*--------------------------------------------------------------*/
 @media screen and (max-width: 900px) and (orientation: landscape) {
     .divArrowDown{
@@ -154,6 +169,11 @@
     .slid1{
         background-size: auto 15%,190% 25%, auto;
         background-position: bottom, 100% bottom;
+    }
+    .divArrowDown, .divArrowUP{
+        width: 3em;
+        height: 3em;
+        left: calc(100vw - 3em);
     }
 }
 

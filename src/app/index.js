@@ -74,16 +74,33 @@ function lastItemOfArr() {
 function sliderGoUp(item) {
 
     if (item.classList.contains('show')) {
-        if (item.nextElementSibling && item.nextElementSibling !== obj.divArrowUp
-            && item.nextElementSibling.id != 'Contacts') {
-            lastItemOfArr();
-            item.classList.remove('show', 'up');
-            item.nextElementSibling.classList.remove('down');
-            item.nextElementSibling.classList.add('show', 'up');
+        if (window.screen.width > 1100) {
+            if (item.nextElementSibling && item.nextElementSibling !== obj.divArrowUp
+                && item.nextElementSibling.id !== 'Contacts') {
+                lastItemOfArr();
+                item.classList.remove('show', 'up');
+                item.nextElementSibling.classList.remove('down');
+                item.nextElementSibling.classList.add('show', 'up');
 
-            return true;
-           }
+                return true;
+            }
+        } else {
+            if (item.previousElementSibling && item.previousElementSibling !== obj.divArrowDown) {
+                if(item.previousElementSibling.id === 'Contacts'){
+                    return false;
+                }else {
+                    lastItemOfArr();
+                    item.classList.remove('show');
+                    item.classList.add('upW');
+
+                    setTimeout(() => {
+                        item.previousElementSibling.classList.add('show');
+                    }, 1000);
+                    return true;
+                }
+            }
         }
+    }
     return false;
 
 }
@@ -91,17 +108,40 @@ function sliderGoUp(item) {
 function sliderGoDown(item) {
 
     if(item.classList.contains('show')) {
-        if (item.previousElementSibling && item.previousElementSibling !== obj.divArrowDown
-            && item.previousElementSibling.id != 'Contacts') {
-            lastItemOfArr();
-            item.classList.remove('show', 'up');
-            item.classList.add('down');
+        if (window.screen.width > 1100) {
+            if (item.previousElementSibling && item.previousElementSibling !== obj.divArrowDown
+                && item.previousElementSibling.id !== 'Contacts') {
+                lastItemOfArr();
+                item.classList.remove('show', 'up');
+                item.classList.add('down');
 
-            setTimeout(() => {
-                item.previousElementSibling.classList.add('show');
+                setTimeout(() => {
+                    item.previousElementSibling.classList.add('show');
                 }, 1000);
 
-            return true;
+                return true;
+            }
+        }else {
+            if (item.nextElementSibling && item.nextElementSibling !== obj.divArrowUp) {
+                if(item.nextElementSibling.id === 'Contacts'){
+                    return false;
+                }else {
+                    lastItemOfArr();
+                    if(item.id === 'Templates'){
+                        if(item.lastElementChild.scrollTop === 0){
+                            item.classList.remove('show', 'up');
+                            item.nextElementSibling.classList.remove('upW');
+                            item.nextElementSibling.classList.add('show');
+                        }
+                    }else {
+                        item.classList.remove('show', 'downW');
+                        item.nextElementSibling.classList.remove('upW');
+                        item.nextElementSibling.classList.add('show', 'downW');
+                    }
+                    return true;
+                }
+
+            }
         }
     }
     return false;
@@ -109,10 +149,11 @@ function sliderGoDown(item) {
 //-----------------------------------------------------------------------------------
 function changeSliderUP() {
     let mass = obj.massSlides,
-        len = mass.length;
+        len = null;
+        (window.screen.width > 1100) ? len = mass.length - 1: len = mass.length;
     obj.ArrowUp.classList.remove('animButton');
 
-    for (let i = 1; i < len-1; i++) {
+    for (let i = 1; i < len; i++) {
         obj.index = i;
         if(sliderGoUp(mass[i])){
             return;
@@ -122,7 +163,9 @@ function changeSliderUP() {
 // ------------------------------------------------------------------------------------
 function changeSliderDOWN() {
     let mass = obj.massSlides,
-        len = mass.length;
+        len = null;
+    (window.screen.width > 1100) ? len = mass.length: len = mass.length-1;
+    obj.ArrowUp.classList.remove('animButton');
 
     for (let i = 1; i < len; i++){
         obj.index = i;
@@ -130,36 +173,14 @@ function changeSliderDOWN() {
     }
 
 }
-// ---------------------------------------------------------------------------------
-function scrollEnd(item) {
-
-    if(item.scrollHeight - item.scrollTop === item.clientHeight){
-        return true;
-    }
-    return false;
-}
-// --------------------------------------------------------------------------------
-function scrollTemplate() {
-
-    let template = slid4,
-        main = template.querySelector('.main');
-
-    document.ontouchstart = null;
-    document.ontouchmove = null;
-
-    if(scrollEnd(main)){
-            document.ontouchstart = startTouch;
-            document.ontouchmove = moveTouch;
-        }
-}
-
 //---------------------Swipe Up / Down / Left / Right-------------------------------------------------------------
 function startTouch(e) {
        obj.initialX = e.touches[0].clientX;
        obj.initialY = e.touches[0].clientY;
 }
 function moveTouch(e) {
-        if (obj.initialX === null) {
+
+    if (obj.initialX === null) {
             return;
         }
 
@@ -186,51 +207,51 @@ function moveTouch(e) {
             // sliding vertically
             if (diffY > 0) {
                 // swiped up
-                if( window.screen.width < 1000) {
-                  if(document.documentElement.children[1].firstElementChild.children[4].classList.contains('show')){
-                      let template = document.documentElement.children[1].firstElementChild.children[4],
-                          main = template.lastElementChild;
-                      if (scrollEnd(main)){
-                          changeSliderUP();
-                      }
-                  }else {
-                      changeSliderUP();
-                  }
-
-                }else {
-                    changeSliderUP();
-                }
-
+               changeSliderUP();
             } else {
                 // swiped down
                 changeSliderDOWN();
+
             }
         }
 
         obj.initialX = null;
         obj.initialY = null;
-
-        // e.preventDefault();
 }
 //----------------------------------------------------------------------------
 function buttonDown(event) {
-
-    if (event.code === 'ArrowDown') {
-        changeSliderDOWN();
-    }
-    if (event.code === 'ArrowUp') {
-        changeSliderUP();
+    if(window.screen.width > 1100) {
+        if (event.code === 'ArrowDown') {
+            changeSliderDOWN();
+        }
+        if (event.code === 'ArrowUp') {
+            changeSliderUP();
+        }
+    }else{
+        if (event.code === 'ArrowDown') {
+            changeSliderUP();
+        }
+        if (event.code === 'ArrowUp') {
+            changeSliderDOWN();
+        }
     }
 }
 //--------------------------------------------------------------------------
 function mouseWheel(e) {
 
     let delta = e.deltaY || e.detail || e.wheelDelta;
+    if(window.screen.width > 1100){
+        delta > 0 ? changeSliderDOWN()
+            :  ( window.onmousewheel = null ,
+                changeSliderUP(),
+                setTimeout(()=> window.onmousewheel = mouseWheel, 500));
+    }else {
+        delta > 0 ? changeSliderUP()
+            :  ( window.onmousewheel = null,
+                changeSliderDOWN(),
+                setTimeout(()=> window.onmousewheel = mouseWheel, 500));
+    }
 
-    delta > 0 ? changeSliderDOWN()
-              :  ( window.onmousewheel = null ,
-                   changeSliderUP(),
-                 setTimeout(()=> window.onmousewheel = mouseWheel, 500));
 }
 //-----------------------------------------------------------------------------------
 function startListener(){
@@ -239,11 +260,6 @@ function startListener(){
     document.ontouchstart = startTouch;
     document.ontouchmove = moveTouch;
 
-    if( window.screen.width < 1000) {
-        let template = slid4,
-            main = template.querySelector('.main');
-        main.addEventListener('scroll', scrollTemplate);
-    }
 }
 //-----------------------------------------------------------------------------------
 function stopListener(){
@@ -286,11 +302,21 @@ function choosePage(e) {
 
             }else {
                 if(flag){
-                    mass[i].classList.remove('show');
-                    mass[i].classList.add('up');
+                    if(window.screen.width > 1100){
+                        mass[i].classList.remove('show');
+                        mass[i].classList.add('up');
+                    }else{
+                        mass[i].classList.remove('show');
+                    }
+
                 }else{
-                    mass[i].classList.remove('show', 'up');
-                    mass[i].classList.add('down');
+                    if(window.screen.width > 1100) {
+                        mass[i].classList.remove('show', 'up');
+                        mass[i].classList.add('down');
+                    }else {
+                        mass[i].classList.remove('show');
+                        mass[i].classList.add('upW');
+                    }
                 }
                 removeChange(mass[i]);
             }
@@ -313,16 +339,17 @@ function menuShow() {
     const mass = obj.massSlides,
         len = mass.length;
     let transForm = 0;
-    mass.forEach( el => {
-        sliderGoUp(el);
-    });
 
-    for (let i = 0; i < len; i++){
+        mass.forEach( el => {
+            el.classList.remove('up', 'down', 'upW', 'downW','show');
+        });
+        mass[len-1].classList.add('show');
+
+        for (let i = 0; i < len; i++){
 
         if(!mass[i].style.transform || mass[i].style.transform === 'none'){
             if(i){
-                window.screen.width < 1000 ? transForm += 70 : transForm += 80;
-
+                window.screen.width < 1100 ? transForm += 70 : transForm += 80;
                 mass[i].style.borderRadius = `8px 8px 0 0`;
                 mass[i].style.transform = `translateY(${transForm}px)`;
 
@@ -376,6 +403,7 @@ function modalWindow(){
 }
 // --------------------------------------------------------
 obj.menuButton.addEventListener('click', menuShow);
+// window.addEventListener('touchmove', e => e.preventDefault(), { passive: false });
 // -------------------------------------------------------------
 sliderContainer();
 creatModalWindow();
