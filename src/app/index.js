@@ -403,6 +403,16 @@ function modalWindow(){
 }
 // --------------------------------------------------------
 obj.menuButton.addEventListener('click', menuShow);
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+// слушаем событие resize
+window.addEventListener('resize', () => {
+    // получаем текущее значение высоты
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
 // window.addEventListener('touchmove', e => e.preventDefault(), { passive: false });
 // -------------------------------------------------------------
 sliderContainer();

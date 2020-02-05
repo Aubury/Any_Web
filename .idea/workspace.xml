@@ -6,12 +6,6 @@
       <change beforePath="$PROJECT_DIR$/dist/index.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/slides/slide2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/slides/slide2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/slides/slide3.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/slides/slide3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/slides/slide5.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/slides/slide5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/slide_1.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/slide_1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/slide_4.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/slide_4.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/slider.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -185,7 +179,7 @@
       <workItem from="1580707671718" duration="24965000" />
       <workItem from="1580801565819" duration="3207000" />
       <workItem from="1580821324985" duration="22493000" />
-      <workItem from="1580879912951" duration="31322000" />
+      <workItem from="1580879912951" duration="32233000" />
     </task>
     <servers />
   </component>
