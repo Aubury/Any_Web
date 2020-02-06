@@ -50,30 +50,15 @@ function cloudsImg() {
         div2 = document.createElement('div'),
         div3 = document.createElement('div');
 
-    div1.classList.add('cloud1','cloud');
+    div1.classList.add('cloud1','cloud', 'moveCloud_1');
     obj.main.appendChild(div1);
 
-    div2.classList.add('cloud2', 'cloud');
+    div2.classList.add('cloud2', 'cloud', 'moveCloud_2');
     obj.main.appendChild(div2);
 
-    div3.classList.add('cloud3', 'cloud');
+    div3.classList.add('cloud3', 'cloud', 'moveCloud_3');
     obj.main.appendChild(div3);
 
-}
-//-----------------------------------------------------------
-function moveClouds() {
-    const  massCloud = obj.main.querySelectorAll('.cloud');
-
-    massCloud.forEach( el => {
-        let str = (el.style.left).slice(0,(el.style.left).length - 2);
-        if(Number(str) > (document.documentElement.clientWidth + 10)){
-            el.classList.add('none');
-            el.style.left = '-' + (el.clientWidth + 500) + 'px';
-        }else{
-            el.classList.remove('none');
-            el.style.left = (el.offsetLeft + 10) + 'px';
-        }
-    })
 }
 //------------------------------------------------------------
 function moveMoon() {
@@ -221,7 +206,6 @@ function container() {
     stars();
     cloudsImg();
     setInterval(changePositionStars, 20000);
-    setInterval(moveClouds,0);
     setInterval(moveMoon,10000);
     setInterval(moveMoon,10000);
     setInterval(words, 5000);
@@ -229,4 +213,6 @@ function container() {
 }
 
 container();
+
+
 export default obj.slide;

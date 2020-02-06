@@ -92,24 +92,64 @@
     background-repeat: no-repeat;
     background-size: contain;
     width: 40%;
+    max-width: 250px;
     height: 28%;
+    max-height: 200px;
     position: absolute;
     top:10%;
-    left: calc(100vw - 45%);
-    transition: 1s;
+    left: -50%;
     z-index: 98;
+}
+@keyframes Cloud1{
+    from{
+        display: none;
+        left: -50%;
+    }
+    20%{
+        display: block;
+    }
+    100%{
+        left: calc(100vh + 50%);
+        display: none;
+    }
+}
+.moveCloud_1{
+    left: -50%;
+    animation: 70000ms linear Cloud1;
+    animation-delay: 10s;
+    animation-iteration-count: infinite;
 }
 .cloud2{
     background-image: url("../img/cloud_2.png");
     background-repeat: no-repeat;
     background-size: contain;
     width: 40%;
+    max-width: 250px;
     height: 28%;
+    max-height: 200px;
     position: absolute;
-    top:20%;
-    left: calc(100vw - 40%);
+    top:15%;
+    left: -50%;
     z-index: 100;
-    transition: .5s;
+}
+@keyframes Cloud2{
+    from{
+        display: none;
+        left: -50%;
+    }
+    20%{
+        display: block;
+    }
+    100%{
+        left: calc(100vh + 50%);
+        display: none;
+    }
+}
+.moveCloud_2{
+    left: -50%;
+    animation: 90000ms linear Cloud2;
+    animation-delay: 20s;
+    animation-iteration-count: infinite;
 }
 .cloud3 {
     background-image: url("../img/cloud_3.png");
@@ -117,11 +157,30 @@
     background-size: contain;
     width: 65%;
     height: 25%;
+    max-width: 450px;
+    max-height: 170px;
     position: absolute;
-    top: 25%;
-    left: calc(100vw - 100%);
+    top: 20%;
+    left: -70%;
     z-index: 101;
-    transition: 1.5s;
+}
+@keyframes Cloud3{
+    from{
+        display: none;
+        left: -70%;
+    }
+    20%{
+        display: block;
+    }
+    100%{
+        left:calc(100vh + 70%);
+        display: none;
+    }
+}
+.moveCloud_3{
+    left: -70%;
+    animation: 120000ms linear Cloud3;
+    animation-iteration-count: infinite;
 }
 .wordsBlock{
     width: 30%;
