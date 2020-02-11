@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -37,7 +38,8 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|svg|jpg|gif)$/,
+                // test: /\.(png|svg|jpg|gif)$/,
+                test: /\.(jpe?g|png|gif|ico|svg)$/i,
                 include: path.resolve(__dirname, 'src/img'),
                 use: {
                     loader: 'file-loader',
@@ -72,10 +74,12 @@ module.exports = {
             template: path.resolve(__dirname, 'src/html', 'index.html'),
             filename: 'index.html',
             inject: true,
-            inlineSource: '.(js|css)$' // embed all javascript and css inline
+            inlineSource: '.(js|css)$', // embed all javascript and css inline
+            favicon: 'src/favicon/commentText.png'
 
         }),
         new HtmlWebpackInlineSourcePlugin(),
         new ExtractTextPlugin("[name].css") //Extract to styles.css file
+        // new FaviconsWebpackPlugin('[name].png') // svg works too!
     ]
 }

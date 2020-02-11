@@ -414,14 +414,28 @@ window.addEventListener('resize', () => {
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
-function orientationScreen(){
-    let lock = window.screen.orientation.lock("portrait")|| window.screen.lockOrientation("portrait");
-    return lock;
-}
-// if (window.screen.width < 1100){
-    // window.addEventListener("orientationchange",()=> window.screen.orientation.lock("portrait"));
-    // window.screen.orientation.lock("portrait")|| window.screen.lockOrientation("portrait");
-// }
+let mql = window.matchMedia("(orientation: portrait)");
+
+if(!mql.matches) {
+    // Портретная ориентация
+    document.classList.add('portrait');
+// } else {
+//     // Горизонтальная ориентация
+//
+ }
+
+// Прослушка события изменения ориентации
+mql.addListener(function(m) {
+    if(m.matches) {
+        // Изменено на портретный режим
+        document.classList.add('portrait');
+
+    }
+    // else {
+    //     // Изменено на горизонтальный режим
+    //     return;
+    // }
+});
 
 // -------------------------------------------------------------
 sliderContainer();
