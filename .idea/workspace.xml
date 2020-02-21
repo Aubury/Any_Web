@@ -3,14 +3,32 @@
   <component name="ChangeListManager">
     <list default="true" id="42156913-cb6d-4eb4-b927-6ff6651f61cf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/vendors~index.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/vendors~index.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/1da2ac0ce2475f77ead14788891e054a.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/4ed8298204138b08c1e73d2d9a6cba9a.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/commentText.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/Moon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/backGround-min.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/cat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/cloud_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/cloud_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/cloud_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/commentText.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/downArrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/grass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/grassSnail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/star.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/template_1-min.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/template_2-min.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/template_3-min.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/template_4-min.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/template_5-min.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/template_6-min.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/template_7-min.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/template_8-min.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/img/upArrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/vendors~index.bundle.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +65,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -114,10 +132,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.clear" />
         <item itemvalue="npm.dev" />
-        <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -188,7 +206,9 @@
       <workItem from="1581013172673" duration="4342000" />
       <workItem from="1581178731540" duration="2129000" />
       <workItem from="1581336511774" duration="6946000" />
-      <workItem from="1581410286021" duration="1504000" />
+      <workItem from="1581410286021" duration="2092000" />
+      <workItem from="1581528346885" duration="42000" />
+      <workItem from="1582296883527" duration="207000" />
     </task>
     <servers />
   </component>
