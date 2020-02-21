@@ -72,7 +72,8 @@ module.exports = {
             template: path.resolve(__dirname, 'src/html', 'index.html'),
             filename: 'index.html',
             inject: true,
-            inlineSource: '.(js|css)$' // embed all javascript and css inline
+            inlineSource: '.(js|css)$', // embed all javascript and css inline
+            favicon: "src/img/commentText.png"
 
         }),
         new HtmlWebpackInlineSourcePlugin(),

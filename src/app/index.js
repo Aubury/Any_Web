@@ -418,10 +418,7 @@ function orientationScreen(){
     let lock = window.screen.orientation.lock("portrait")|| window.screen.lockOrientation("portrait");
     return lock;
 }
-// if (window.screen.width < 1100){
-    // window.addEventListener("orientationchange",()=> window.screen.orientation.lock("portrait"));
-    // window.screen.orientation.lock("portrait")|| window.screen.lockOrientation("portrait");
-// }
+
 
 // -------------------------------------------------------------
 sliderContainer();
