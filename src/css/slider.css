@@ -17,27 +17,32 @@
     color: aliceblue;
     transition-delay: 0.20s;
     background-size:auto,100% auto, auto;
+    z-index: 20;
 }
 .slid2{
     background-color: rgba(67, 61, 154, 1);
     transition-delay: 0.15s;
+    z-index: 19;
 
 }
 .slid3{
-    background-color: #7df0c8;
+    background-color: #00191c;
     transition-delay: 0.10s;
-
+    z-index: 18;
+    color: white;
 }
 .slid4{
     background-color: #f3ff86;
     color: #000068;
     transition-delay: 0.05s;
+    z-index: 17;
 
 }
 .slid5{
     background-color: #000068;
     color: aliceblue !important;
     transition-delay: 0s;
+    z-index: 16;
 
 }
 @keyframes slidDown{
