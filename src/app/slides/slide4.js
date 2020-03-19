@@ -1,12 +1,12 @@
 import _ from 'lodash';
-import Temp_1 from '../../img/template_1-min.png';
-import Temp_2 from '../../img/template_2-min.png';
-import Temp_3 from '../../img/template_3-min.png';
-import Temp_4 from '../../img/template_4-min.png';
-import Temp_5 from '../../img/template_5-min.png';
-import Temp_6 from '../../img/template_6-min.png';
-import Temp_7 from '../../img/template_7-min.png';
-import Temp_8 from '../../img/template_8-min.png';
+import Temp_1 from '../../img/template_1.png';
+import Temp_2 from '../../img/template_2.png';
+import Temp_3 from '../../img/template_3.png';
+import Temp_4 from '../../img/template_4.png';
+import Temp_5 from '../../img/template_5.png';
+import Temp_6 from '../../img/template_6.png';
+import Temp_7 from '../../img/template_7.png';
+// import Temp_8 from '../../img/template_8.png';
 
 const obj = {
     slide : document.createElement('div'),
@@ -52,12 +52,12 @@ function Images() {
         obj.massImages.push(temp_7);
 
     let temp_8 = new Image();
-        temp_8.src = Temp_8;
+        temp_8.src = Temp_1;
         temp_8.alt = 'Template';
         obj.massImages.push(temp_8);
 
     let temp_9 = new Image();
-        temp_9.src = Temp_1;
+        temp_9.src = Temp_2;
         temp_9.alt = 'Template';
         obj.massImages.push(temp_9);
 }

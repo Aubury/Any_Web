@@ -58,9 +58,9 @@ h2{
     align-content: normal !important;
 }
 /*-------------------------------------------------------------------------------------------------*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     h2{
-        font-size: 1.7em;
+        font-size: 1.7em !important;
     }
 }
 

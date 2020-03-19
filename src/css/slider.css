@@ -26,10 +26,17 @@
 
 }
 .slid3{
-    background-color: #00191c;
+    /*background-color: #7df0c8;*/
+    background: url("../img/blue_sky.jpg") no-repeat center center;
+    background-size: cover;
+    box-shadow: inset 0px 0px 40px 20px rgba(0, 0, 0, 0.6) ;
     transition-delay: 0.10s;
     z-index: 18;
-    color: white;
+    color: #000068;
+
+}
+.slid3.menu-btn{
+    color: #000068;
 }
 .slid4{
     background-color: #f3ff86;
@@ -158,6 +165,9 @@
         top: -100vh;
         /*animation: 1s ease-in-out slidDown;*/
     }
+    .slid3{
+        box-shadow: inset 0px 0px 30px 10px rgba(0, 0, 0, 0.6) ;
+    }
 }
 /*--------------------------------------------------------------*/
 @media screen and (max-width: 900px) and (orientation: landscape) {
@@ -179,6 +189,9 @@
         width: 3em;
         height: 3em;
         left: calc(100vw - 3em);
+    }
+    .slid3{
+        box-shadow: inset 0px 0px 30px 5px rgba(0, 0, 0, 0.6) ;
     }
 }
 

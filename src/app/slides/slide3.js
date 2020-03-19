@@ -1,8 +1,23 @@
 import _ from 'lodash';
+import Temp_1 from '../../img/template_1.png';
+import Temp_2 from '../../img/template_2.png';
+import Temp_3 from '../../img/template_3.png';
+import Temp_4 from '../../img/template_4.png';
+import Temp_5 from '../../img/template_5.png';
+import Temp_6 from '../../img/template_6.png';
+import Temp_7 from '../../img/template_7.png';
+import Temp_8 from '../../img/amaioswim.jpg';
+import Temp_9 from '../../img/anyW4Ytmpl.jpg';
+import Temp_10 from '../../img/cosm.jpg';
+import Temp_11 from '../../img/destiny.jpg';
+import Temp_12 from '../../img/proudandpunch.jpg';
+import Temp_13 from '../../img/rainforestfoods.jpg'
 
 const obj = {
     slide : document.createElement('div'),
     main  : document.createElement('div'),
+    massImg: [Temp_1, Temp_2, Temp_3, Temp_4, Temp_5, Temp_6, Temp_7, Temp_8, Temp_9, Temp_10,
+              Temp_11, Temp_12, Temp_13],
     massBlocks : [],
 
 }
@@ -25,16 +40,16 @@ function sizeScreen() {
     return size;
 }
 //----------------------------------------------------------
-function newHeight(parent) {
-    let height = parent.clientHeight;
-    if(window.screen.width < 900)
-    {
-        height = parent.clientWidth/2;
-    }else {
-        height = parent.clientWidth/3
-    }
-    return Math.round(Math.random()*(height - height/3) + height/3);
-}
+// function newHeight(parent) {
+//     let height = parent.clientHeight;
+//     if(window.screen.width < 900)
+//     {
+//         height = parent.clientWidth/2;
+//     }else {
+//         height = parent.clientWidth/3
+//     }
+//     return Math.round(Math.random()*(height - height/3) + height/3);
+// }
 //--------------------------------------------------------------
 function newWidth(parent) {
     let width = 0;
@@ -50,32 +65,27 @@ function newWidth(parent) {
 function createBlock( type, size, ...classes) {
     let block = document.createElement(type);
         block.classList.add(...classes);
-        block.style.height = sizeBlock(size) + "px";
-        block.style.width = sizeBlock(size) + "px";
         return block;
 }
 
 //--------------------------------------------------------------
 function massBlocks() {
-   let len = 16,
-       size = sizeScreen();
+   let size = sizeScreen(),
+       massImg = obj.massImg,
+       len = massImg.length;
 
         if(window.screen.width < 1000){
             len = 10;
         }
         for (let i = 0; i < len; i++){
-        let div = null;
-        if(!i){
-               div = document.createElement('div');
-               div.classList.add('block',`block_${i+1}`);
-               div.style.height = size + 'px';
-               div.style.width = size + 'px';
-               div.style.zIndex = zIndex();
-        }else{
+        let div = null,
+            img = new Image();
+            img.src = massImg[i];
+            img.width = sizeBlock(size);
             div = createBlock('div', size, 'block',`block_${i+1}`);
-        }
-
-        obj.massBlocks.push(div);
+            div.appendChild(img);
+            div.addEventListener('click', focus);
+            obj.massBlocks.push(div);
     }
 
 }
@@ -108,8 +118,7 @@ function zIndex() {
         el.style.top = newPositionTop(el) + 'px';
         el.style.left = newPositionLeft(el) + 'px';
         el.style.zIndex = zIndex();
-        el.style.width = newWidth(el.parentElement) +'px';
-        el.style.height = newHeight(el.parentElement) + 'px';
+        el.firstElementChild.style.width = newWidth(el.parentElement) +'px';
         el.style.position = 'absolute';
     })
 }
@@ -140,39 +149,39 @@ function container() {
     container.appendChild(main);
     massBlocks();
     fillMain();
-    setTimeout(()=> positionBlock(), 10);
-    setInterval(()=> positionBlock(), 50000);
-}
-//--------------------------------------------------------------
-//вспомогательная функция
-function putToCache(elem, cache){
-    if(cache.indexOf(elem) != -1){
-        return;
-    }
-    var i = Math.floor(Math.random()*(cache.length + 1));
-    cache.splice(i, 0, elem);
-}
-//функция, возвращающая свеженький, девственный компаратор
-function madness(){
-    var cache = [];
-    return function(a, b){
-        putToCache(a, cache);
-        putToCache(b, cache);
-        return cache.indexOf(b) - cache.indexOf(a);
-    }
-}
-//собственно функция перемешивания
-function shuffle(arr){
-    var compare = madness();
-    return arr.sort(compare);
+    setTimeout(()=> positionBlock(), 0);
+    setInterval(()=> positionBlock(), 40000);
 }
 //---------------------------------------------------------------
 function positionCenter(valueScr, valueBl) {
     return Math.round(valueScr/2 - valueBl/2);
 }
+
 //----------------------------------------------------------------
+function focus(ev) {
+    let el = ev.target,
+        parent = el.parentElement,
+        docWidth = parent.parentElement.clientWidth,
+        docHeight = parent.parentElement.clientHeight,
+        size = undefined;
+
+     el.clientWidth > el.clientHeight ? size = docWidth/1.5 : size = docHeight-20;
+
+    el.clientWidth > el.clientHeight ? el.style.width = Math.ceil(size) + 'px' :
+        (el.style.height = Math.ceil(size) + 'px', el.classList.add('blockCenter'));
+    parent.style.zIndex = 20;
+    parent.classList.add('transition');
+    parent.style.left = positionCenter(docWidth, el.clientWidth) + 'px';
+    parent.style.top = positionCenter(docHeight, el.clientHeight) + 'px';
+    setTimeout(()=>{
+        positionBlock();
+        parent.classList.remove('transition');
+        el.classList.remove('blockCenter');
+    },5000);
+}
 
 container();
+
 
 export default obj.slide;
 
