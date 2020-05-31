@@ -1,11 +1,5 @@
 import _ from 'lodash';
 import '../css/style.css';
-// import 'bootstrap';
-// import 'bootstrap/dist/js/bootstrap';
-// import 'bootstrap/js/dist/util';
-// import 'jquery/src/jquery'
-// import 'jquery/dist/jquery';
-// import 'popper.js';
 import ArrowDown from '../img/downArrow.png';
 import ArrowUp from '../img/upArrow.png';
 import slid1 from "./slides/slide1";

@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import Temp_1 from '../../img/template_1.png';
-import Temp_2 from '../../img/template_2.png';
+import Temp_2 from '../../img/template_2.jpg';
 import Temp_3 from '../../img/template_3.png';
 import Temp_4 from '../../img/template_4.png';
 import Temp_5 from '../../img/template_5.png';
