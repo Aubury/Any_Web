@@ -3,41 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="42156913-cb6d-4eb4-b927-6ff6651f61cf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/img/template_1-min.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/img/template_2-min.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/img/template_3-min.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/img/template_4-min.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/img/template_5-min.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/img/template_6-min.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/img/template_7-min.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/img/template_8-min.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/vendors~index.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/vendors~index.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/slides/slide3.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/slides/slide3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/slides/slide4.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/slides/slide4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/slide_3.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/slide_3.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/slide_4.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/slide_4.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/slider.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/Showcase-Template-Flat-Presentation.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/template_1-min.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/template_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/template_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/template_2-min.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/template_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/template_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/template_3-min.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/template_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/template_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/template_4-min.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/template_5-min.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/template_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/template_5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/template_6-min.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/template_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/template_6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/template_7-min.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/template_7.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/template_7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/template_8-min.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/template_8.png" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,32 +38,29 @@
   </component>
   <component name="ProjectId" id="1VcQvQeMJgF0ehVPm1ecObW9jEW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WP_ANNA_COSMETIC" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\Any_Web\src\img" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\Any_Web\src\css" />
       <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\Any_Web" />
       <recent name="D:\ПРОГРАММИРОВАНИЕ\ПРОЕКТЫ\Any_Web\src\app\slides" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="npm.build">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -140,9 +106,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.build" />
-        <item itemvalue="npm.start" />
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.clear" />
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -221,7 +187,10 @@
       <workItem from="1584363059499" duration="1482000" />
       <workItem from="1584441848755" duration="2309000" />
       <workItem from="1584538693032" duration="20434000" />
-      <workItem from="1584603727945" duration="3881000" />
+      <workItem from="1584603727945" duration="4998000" />
+      <workItem from="1584639400361" duration="142000" />
+      <workItem from="1584695943835" duration="379000" />
+      <workItem from="1590912129565" duration="2760000" />
     </task>
     <servers />
   </component>
@@ -240,6 +209,28 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1865" height="268" key="GridCell.Tab.0.bottom" timestamp="1590914896344">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590914896344" />
+    <state width="1865" height="268" key="GridCell.Tab.0.center" timestamp="1590914896343">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="268" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590914896343" />
+    <state width="1865" height="268" key="GridCell.Tab.0.left" timestamp="1590914896343">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="268" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590914896343" />
+    <state width="1865" height="268" key="GridCell.Tab.0.right" timestamp="1590914896343">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="268" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590914896343" />
+    <state x="532" y="-5" width="838" height="1032" key="search.everywhere.popup" timestamp="1590912803852">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="532" y="-5" width="838" height="1032" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1590912803852" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

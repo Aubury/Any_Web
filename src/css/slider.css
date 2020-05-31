@@ -29,7 +29,7 @@
     /*background-color: #7df0c8;*/
     background: url("../img/blue_sky.jpg") no-repeat center center;
     background-size: cover;
-    box-shadow: inset 0px 0px 40px 20px rgba(0, 0, 0, 0.6) ;
+    box-shadow: inset 0px 0px 40px 20px rgba(18, 30, 62, 0.6) ;
     transition-delay: 0.10s;
     z-index: 18;
     color: #000068;
@@ -166,7 +166,8 @@
         /*animation: 1s ease-in-out slidDown;*/
     }
     .slid3{
-        box-shadow: inset 0px 0px 30px 10px rgba(0, 0, 0, 0.6) ;
+        box-shadow: inset 0px 0px 40px 10px rgba(18, 30, 62, 0.6) ;
+
     }
 }
 /*--------------------------------------------------------------*/
@@ -191,7 +192,8 @@
         left: calc(100vw - 3em);
     }
     .slid3{
-        box-shadow: inset 0px 0px 30px 5px rgba(0, 0, 0, 0.6) ;
+        box-shadow: inset 0px 0px 40px 5px rgba(18, 30, 62, 0.6) ;
+
     }
 }
 
