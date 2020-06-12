@@ -1,0 +1,64 @@
+@media screen and (max-width: 800px){
+
+    img.catWeOfffer {
+        bottom : 10px;
+        left : 4%;
+        width : 30%;
+    }
+
+
+    img.moonWeOfffer,
+    img.sunWeOfffer {
+        width : 20%;
+    }
+
+
+    img.sunWeOffferWeOfffer {
+        right : 100%;
+    }
+    
+
+    text {
+        font-size : 25px;
+    }
+
+
+    .starWeOfffer,
+    .starYellow,
+    .starBlue,
+    .starRed {
+        width : 2px;
+        height : 2px;
+    }
+    
+    
+    /* ====================== modal windows ============================== */
+    
+    
+    .modalWeOfffer {
+        justify-content : flex-end;
+        align-items : center;
+    }
+    
+
+    .modalWeOfffer>.containerWeOfffer {
+        width : 65%;
+    }
+
+
+    button {
+        width : 45px;
+        height : 45px;
+        border-radius : 50%;
+        font-size : 30px;
+    }
+
+
+    .modalWeOfffer p {
+        width : 65%;
+        font-size : 25px;
+        text-align : left;
+        padding : 0px 40px 0px 40px;
+        line-height : 1.3;
+    }    
+}
