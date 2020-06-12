@@ -9,7 +9,7 @@
 
     img.moonWeOfffer,
     img.sunWeOfffer {
-        width : 30%;
+        width : 26%;
     }
 
 
@@ -47,11 +47,9 @@
     .modalWeOfffer>.containerWeOfffer {
         width : 70%;
         flex-wrap : wrap;
-        flex-direction: column-reverse;
     }
 
     button {
-        margin : 10px 10px 0 auto;
         width : 35px;
         height : 35px;
         font-size : 20px;

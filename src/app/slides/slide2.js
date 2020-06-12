@@ -16,6 +16,9 @@ slid2.id = 'We suppose';
 // create elements for slide We offer ================================================
 
 const createElementsSlidWeOffer = {
+    titleWeOffer : document.createElement('h2'),
+    textTitleWeOffer : document.createTextNode('Мы предлагаем'),
+
     blockSVGWeOffer : document.createElement('div'),
     modalWindowInternetShop : document.createElement('div'),
     modalWindowSiteCompany : document.createElement('div'),
@@ -128,6 +131,11 @@ function imagesSlidWeOffer() {
 // function for create page ==========================================
 
 function buildPage() {
+    //create title
+    createElementsSlidWeOffer.titleWeOffer.classList.add('titleWeOffer');
+    createElementsSlidWeOffer.titleWeOffer.appendChild(createElementsSlidWeOffer.textTitleWeOffer);
+    slid2.appendChild(createElementsSlidWeOffer.titleWeOffer);
+
     // create svg
     createElementsSlidWeOffer.blockSVGWeOffer.classList.add('blockSVG');
     slid2.appendChild(createElementsSlidWeOffer.blockSVGWeOffer);
@@ -318,10 +326,10 @@ const openModal = function openModalWindow(classModal){
     let someModal = document.querySelector(variables.modalWindows[classModal]),
         timeOpen = setInterval(() => {
             if(variables.positionSvgContainer === 100){
-                variables.positionModal += 2 ;
-                variables.positionSun -= 2 ;
+                variables.positionModal += 1 ;
+                variables.positionSun -= 1 ;
             }else{
-                variables.positionSvgContainer += 2 ;
+                variables.positionSvgContainer += 1 ;
             }
             variables.positionMoon === -36 ? '' : variables.positionMoon -- ;
             variables.positionModal === -70 ? bgcColorModWin('day') : '';
@@ -346,10 +354,10 @@ const closeModal = function closeModalWindow(classModal){
     let someModal = document.querySelector(variables.modalWindows[classModal]),
         timeClose = setInterval(() => {
             if(variables.positionModal === 100){
-                variables.positionSvgContainer += 2 ;
-                variables.positionMoon -= 2 ;
+                variables.positionSvgContainer += 1 ;
+                variables.positionMoon -= 1 ;
             }else{
-                variables.positionModal += 2 ;
+                variables.positionModal += 1 ;
             }
             variables.positionSun === -36 ? '' : variables.positionSun -- ;
             variables.positionSvgContainer === -70 ? bgcColorModWin('night') : '';
@@ -373,20 +381,20 @@ const closeModal = function closeModalWindow(classModal){
 const bgcColorModWin = function backgroundColorModalWindows(paramsBgcol){
     let color = setInterval(() => {
         if(paramsBgcol === 'day'){
-            variables.r1color === 66 ? '' : variables.r1color += 2 ;
-            variables.r2color === 106 ? '' : variables.r2color += 2 ;
-            variables.r3color === 224 ? '' : variables.r3color += 2 ;
-            variables.r4color === 254 ? '' : variables.r4color += 2 ;
-            variables.r5color === 254 ? '' : variables.r5color += 2 ;
-            variables.r6color === 254 ? '' : variables.r6color += 2 ;
+            variables.r1color === 66 ? '' : variables.r1color += 1 ;
+            variables.r2color === 106 ? '' : variables.r2color += 1 ;
+            variables.r3color === 224 ? '' : variables.r3color += 1 ;
+            variables.r4color === 254 ? '' : variables.r4color += 1 ;
+            variables.r5color === 254 ? '' : variables.r5color += 1 ;
+            variables.r6color === 254 ? '' : variables.r6color += 1 ;
             variables.r1color === 66 && variables.r2color === 106 && variables.r3color === 224 && variables.r4color === 254 && variables.r5color === 254 && variables.r6color === 254? clearInterval(color) : '';
         }else{
-            variables.r1color === 4 ? '' : variables.r1color -= 2 ;
-            variables.r2color === 14 ? '' : variables.r2color -= 2 ;
-            variables.r3color === 114 ? '' : variables.r3color -= 2 ;
-            variables.r4color === 66 ? '' : variables.r4color -= 2 ;
-            variables.r5color === 106 ? '' : variables.r5color -= 2 ;
-            variables.r6color === 224 ? '' : variables.r6color -= 2 ;
+            variables.r1color === 4 ? '' : variables.r1color -= 1 ;
+            variables.r2color === 14 ? '' : variables.r2color -= 1 ;
+            variables.r3color === 114 ? '' : variables.r3color -= 1 ;
+            variables.r4color === 66 ? '' : variables.r4color -= 1 ;
+            variables.r5color === 106 ? '' : variables.r5color -= 1 ;
+            variables.r6color === 224 ? '' : variables.r6color -= 1 ;
             variables.r1color === 4 && variables.r2color === 14 && variables.r3color === 114 && variables.r4color === 66 && variables.r5color === 106 && variables.r6color === 224 ? clearInterval(color) : '';
         }
         slid2.style.background = `linear-gradient(rgba(${variables.r1color},${variables.r2color},${variables.r3color}, 1) 30%, rgba(${variables.r4color},${variables.r5color},${variables.r6color}, 1) 100%) fixed`;

@@ -29,6 +29,12 @@ div.slid2 {
 }
 
 
+h2.titleWeOffer {
+    color : white;
+    z-index: 1000;
+}
+
+
 img.homeWeOfffer {
     position : absolute;
     bottom : 0;
