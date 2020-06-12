@@ -128,7 +128,7 @@ function imagesSlidWeOffer() {
 
 
 
-// function for create page ==========================================
+// function for create page ===========================================
 
 function buildPage() {
     //create title
