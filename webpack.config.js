@@ -28,6 +28,16 @@ module.exports = {
     },
     module: {
         rules: [
+            {   type: 'javascript/auto',
+                test: /\.json$/,
+                loader: 'json-loader',
+                include: path.resolve(__dirname, 'src/json'),
+                options: {
+                    name:  'json/[name].[ext]',
+                    context: ''
+                }
+
+            },
             {
                 test: /\.css$/,
                 include: path.resolve(__dirname, 'src/css'),
@@ -63,7 +73,9 @@ module.exports = {
                         attrs: ['img:src', 'link:href']
                     }
                 }
-            }
+            },
+
+
         ]
     },
     plugins: [

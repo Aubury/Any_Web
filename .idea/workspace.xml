@@ -47,7 +47,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WP_ANNA_COSMETIC" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -106,8 +106,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.build" />
-        <item itemvalue="npm.clear" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.clear" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -190,7 +190,10 @@
       <workItem from="1584603727945" duration="4998000" />
       <workItem from="1584639400361" duration="142000" />
       <workItem from="1584695943835" duration="379000" />
-      <workItem from="1590912129565" duration="5268000" />
+      <workItem from="1590912129565" duration="5617000" />
+      <workItem from="1590920270001" duration="1205000" />
+      <workItem from="1590921959587" duration="312000" />
+      <workItem from="1591942534808" duration="11728000" />
     </task>
     <servers />
   </component>
@@ -211,22 +214,30 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1865" height="268" key="GridCell.Tab.0.bottom" timestamp="1590919410223">
+    <state x="452" y="95" key="#Inspections" timestamp="1591942764781">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590919410223" />
-    <state width="1865" height="268" key="GridCell.Tab.0.center" timestamp="1590919410223">
+    <state x="452" y="95" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1591942764781" />
+    <state x="690" y="218" key="FileChooserDialogImpl" timestamp="1590922248276">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="268" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590919410223" />
-    <state width="1865" height="268" key="GridCell.Tab.0.left" timestamp="1590919410223">
+    <state x="690" y="218" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1590922248276" />
+    <state width="1865" height="268" key="GridCell.Tab.0.bottom" timestamp="1591962639658">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="268" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590919410223" />
-    <state width="1865" height="268" key="GridCell.Tab.0.right" timestamp="1590919410223">
+    <state width="1865" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591962639658" />
+    <state width="1865" height="268" key="GridCell.Tab.0.center" timestamp="1591962639658">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1865" height="268" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590919410223" />
+    <state width="1865" height="268" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591962639658" />
+    <state width="1865" height="268" key="GridCell.Tab.0.left" timestamp="1591962639658">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="268" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591962639658" />
+    <state width="1865" height="268" key="GridCell.Tab.0.right" timestamp="1591962639658">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1865" height="268" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591962639658" />
     <state x="532" y="-5" width="838" height="1032" key="search.everywhere.popup" timestamp="1590912803852">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
