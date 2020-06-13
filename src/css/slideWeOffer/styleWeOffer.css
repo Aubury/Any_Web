@@ -95,7 +95,7 @@ svg {
 
 
 text {
-    font-family : 'Segoe Print';
+    font-family : 'Segoe Print' !important;
     cursor : pointer;
     transition : .15s linear;
     stroke : var(--colorText-stroke);
@@ -209,7 +209,7 @@ button {
     color : black;
     width : 90%;
     font-size : 30px;
-    font-family : 'Segoe Print';
+    font-family : 'Segoe Print' !important;
     text-align : justify;
     padding: 0px 70px 0px 40px;
     line-height : 1.4;
