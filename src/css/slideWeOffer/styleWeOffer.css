@@ -102,11 +102,7 @@ svg {
 
 
 text {
-<<<<<<< HEAD
     font-family : 'Segoe Print Bold';
-=======
-    font-family : 'Segoe Print' !important;
->>>>>>> 9c1905abb1b3a54607a302f7e4e35b0cf47d9a4b
     cursor : pointer;
     transition : .15s linear;
     stroke : var(--colorText-stroke);
@@ -222,11 +218,7 @@ button {
     color : black;
     width : 90%;
     font-size : 30px;
-<<<<<<< HEAD
     font-family : 'Segoe Print Bold';
-=======
-    font-family : 'Segoe Print' !important;
->>>>>>> 9c1905abb1b3a54607a302f7e4e35b0cf47d9a4b
     text-align : justify;
     padding: 0px 70px 0px 40px;
     line-height : 1.4;
