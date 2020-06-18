@@ -239,17 +239,12 @@ buildPage();
 const variables = {
     counterDivs : 0,
     counter : 0,
-    positionMoon : 0,
-    positionSun : 100,
     classRedStars : '.starRed',
     classYellowStars : '.starYellow',
     classBlueStars : '.starBlue',
     bgcColorRedStar : '#FA8072',
     bgcColorYellowStar : 'yellow',
     bgcColorBlueStar : '#00FFFF',
-    positionModal : -100,
-    positionSvgContainer : 0,
-    countRotateSvgContainer : 0,
     r1color : 4,
     r2color : 14,
     r3color : 114,
@@ -268,16 +263,19 @@ const variables = {
 // position for <text> in svg and animation circle ==========================
 
 const fnwh = function heigthWidth(data){
-    for(let i = 0; i <= variables.paramsScreen.length; i++){
-        if(window.innerWidth < variables.paramsScreen[i]){
-            createElementsSlidWeOffer.blockSVGWeOffer.innerHTML = data[variables.paramsScreen[i]];
-            break;
+    if(window.innerHeight < 450){
+        createElementsSlidWeOffer.blockSVGWeOffer.innerHTML = data.h450;
+    }else{
+        for(let i = 0; i <= variables.paramsScreen.length; i++){
+            if(window.innerWidth < variables.paramsScreen[i]){
+                createElementsSlidWeOffer.blockSVGWeOffer.innerHTML = data[variables.paramsScreen[i]];
+                break;
+            }
         }
     }
-};
-
-
+}
 fnwh(svgJSON);
+
 
 const sizeWindow = window.addEventListener('resize', () => { fnwh(svgJSON) });
 
@@ -323,82 +321,53 @@ const callFunctionStars = setInterval(() => {
 // functions for modal windows ==============================================
 
 const openModal = function openModalWindow(classModal){
-    let someModal = document.querySelector(variables.modalWindows[classModal]),
-        timeOpen = setInterval(() => {
-            if(variables.positionSvgContainer === 100){
-                variables.positionModal += 1 ;
-                variables.positionSun -= 1 ;
-            }else{
-                variables.positionSvgContainer += 1 ;
-            }
-            variables.positionMoon === -36 ? '' : variables.positionMoon -- ;
-            variables.positionModal === -70 ? bgcColorModWin('day') : '';
-            createElementsSlidWeOffer.blockSVGWeOffer.style.left = variables.positionSvgContainer + '%';
-            createElementsSlidWeOffer.MoonWeOffer.style.right = variables.positionMoon + '%';
-            createElementsSlidWeOffer.Sun.style.right = variables.positionSun + '%';
-            someModal.style.left = variables.positionModal + '%';
-            if(variables.positionModal === 0){
-                clearInterval(timeOpen);
-                variables.positionSvgContainer = -100;
-                variables.positionModal = 0;
-                variables.positionMoon = 100;
-                variables.bgcColorRedStar = 'transparent';
-                variables.bgcColorBlueStar = 'transparent';
-                variables.bgcColorYellowStar = 'transparent';
-            }
-        }, 5);
+    let someModal = document.querySelector(variables.modalWindows[classModal]);
+
+    createElementsSlidWeOffer.blockSVGWeOffer.style.left = 100 + '%';
+    createElementsSlidWeOffer.MoonWeOffer.style.right = -35 + '%';
+    createElementsSlidWeOffer.Sun.style.opacity = 1;
+    someModal.style.opacity = 1;
+
+    setTimeout(() => {
+        bgcColorModWin('day');
+        createElementsSlidWeOffer.blockSVGWeOffer.style.opacity = 0;
+        createElementsSlidWeOffer.MoonWeOffer.style.opacity = 0;
+        createElementsSlidWeOffer.MoonWeOffer.style.right = 100 + '%';
+        createElementsSlidWeOffer.blockSVGWeOffer.style.left = -100 + '%';
+        someModal.style.left = 0 + '%';
+        createElementsSlidWeOffer.Sun.style.right = 0 + '%';
+        variables.bgcColorRedStar = 'transparent';
+        variables.bgcColorBlueStar = 'transparent';
+        variables.bgcColorYellowStar = 'transparent';
+    }, 1000);
 }
 
 
 const closeModal = function closeModalWindow(classModal){
-    let someModal = document.querySelector(variables.modalWindows[classModal]),
-        timeClose = setInterval(() => {
-            if(variables.positionModal === 100){
-                variables.positionSvgContainer += 1 ;
-                variables.positionMoon -= 1 ;
-            }else{
-                variables.positionModal += 1 ;
-            }
-            variables.positionSun === -36 ? '' : variables.positionSun -- ;
-            variables.positionSvgContainer === -70 ? bgcColorModWin('night') : '';
-            createElementsSlidWeOffer.blockSVGWeOffer.style.left = variables.positionSvgContainer + '%';
-            createElementsSlidWeOffer.MoonWeOffer.style.right = variables.positionMoon + '%';
-            createElementsSlidWeOffer.Sun.style.right = variables.positionSun + '%';
-            someModal.style.left = variables.positionModal + '%';
-            if(variables.positionSvgContainer === 0){
-                clearInterval(timeClose);
-                variables.positionSvgContainer = 0;
-                variables.positionModal = -100;
-                variables.positionSun = 100;
-                variables.bgcColorRedStar = '#FA8072';
-                variables.bgcColorBlueStar = '#00FFFF';
-                variables.bgcColorYellowStar = 'yellow';
-            }
-        }, 5);
+    let someModal = document.querySelector(variables.modalWindows[classModal]);
+
+    someModal.style.left = 100 + '%';
+    createElementsSlidWeOffer.Sun.style.right = -35 + '%';
+    createElementsSlidWeOffer.MoonWeOffer.style.opacity = 1;
+    createElementsSlidWeOffer.blockSVGWeOffer.style.opacity = 1;
+
+    setTimeout(() => {
+        bgcColorModWin('night');
+        someModal.style.opacity = 0;
+        createElementsSlidWeOffer.Sun.style.opacity = 0;
+        createElementsSlidWeOffer.Sun.style.right = 100 + '%';
+        someModal.style.left = -100 + '%';
+        createElementsSlidWeOffer.blockSVGWeOffer.style.left = 0 + '%';
+        createElementsSlidWeOffer.MoonWeOffer.style.right = 0 + '%';
+        variables.bgcColorRedStar = '#FA8072';
+        variables.bgcColorBlueStar = '#00FFFF';
+        variables.bgcColorYellowStar = 'yellow';
+    }, 1000);
 }
 
 // bgc nigth or day
 const bgcColorModWin = function backgroundColorModalWindows(paramsBgcol){
-    let color = setInterval(() => {
-        if(paramsBgcol === 'day'){
-            variables.r1color === 66 ? '' : variables.r1color += 1 ;
-            variables.r2color === 106 ? '' : variables.r2color += 1 ;
-            variables.r3color === 224 ? '' : variables.r3color += 1 ;
-            variables.r4color === 254 ? '' : variables.r4color += 1 ;
-            variables.r5color === 254 ? '' : variables.r5color += 1 ;
-            variables.r6color === 254 ? '' : variables.r6color += 1 ;
-            variables.r1color === 66 && variables.r2color === 106 && variables.r3color === 224 && variables.r4color === 254 && variables.r5color === 254 && variables.r6color === 254? clearInterval(color) : '';
-        }else{
-            variables.r1color === 4 ? '' : variables.r1color -= 1 ;
-            variables.r2color === 14 ? '' : variables.r2color -= 1 ;
-            variables.r3color === 114 ? '' : variables.r3color -= 1 ;
-            variables.r4color === 66 ? '' : variables.r4color -= 1 ;
-            variables.r5color === 106 ? '' : variables.r5color -= 1 ;
-            variables.r6color === 224 ? '' : variables.r6color -= 1 ;
-            variables.r1color === 4 && variables.r2color === 14 && variables.r3color === 114 && variables.r4color === 66 && variables.r5color === 106 && variables.r6color === 224 ? clearInterval(color) : '';
-        }
-        slid2.style.background = `linear-gradient(rgba(${variables.r1color},${variables.r2color},${variables.r3color}, 1) 30%, rgba(${variables.r4color},${variables.r5color},${variables.r6color}, 1) 100%) fixed`;
-    }, .000001);
+    paramsBgcol === 'day' ? slid2.style.backgroundPositionY = 100 + '%' : slid2.style.backgroundPositionY = 0 + '%';
 }
 
 
