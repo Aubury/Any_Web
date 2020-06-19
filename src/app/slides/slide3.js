@@ -160,7 +160,7 @@ function container() {
             }else {
                 clearInterval(moveBlocksInterval);
             }
-        }, 1500);
+        }, 2000);
 
     })
 
