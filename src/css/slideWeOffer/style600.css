@@ -39,24 +39,7 @@
     
     /* ====================== modal windows ============================== */
     
-
-    .modalWeOfffer>.containerWeOfffer {
-        width : 100%;
-    }
-
-
-    button {
-        width : 45px;
-        height : 45px;
-        font-size : 30px;
-    }
-
-
     .modalWeOfffer p {
-        width : 80%;
         font-size : 22px;
-        text-align : left;
-        padding : 0px 20px 0px 40px;
-        line-height : 1.3;
-    }    
+    }
 }

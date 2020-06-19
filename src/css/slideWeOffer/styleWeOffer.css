@@ -174,7 +174,7 @@ path {
     display : flex;
     justify-content : center;
     align-items : center;
-    position : fixed;
+    position : absolute;
     opacity : 1;
     transition : left 1.5s;
 }
