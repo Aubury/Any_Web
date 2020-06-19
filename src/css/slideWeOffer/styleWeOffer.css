@@ -28,7 +28,7 @@ div.slid2 {
     background-position-y: 0%;
     width : 100%;
     height : 100%;
-    transition: all 1.5s;
+    transition: background-position-y 1.5s;
 }
 
 
