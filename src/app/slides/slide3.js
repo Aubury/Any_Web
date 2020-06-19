@@ -150,20 +150,32 @@ function container() {
     massBlocks();
     fillMain();
 
-    let moveBlocksInterval = undefined,
-        moveBlockTimeOut= setTimeout(()=> positionBlock(), 0);
-
-    container.addEventListener('click',()=>{
-        setTimeout(()=>{
-            if(container.classList.contains('show')){
                 moveBlocksInterval = setInterval(()=> positionBlock(), 20000);
             }else {
-                clearInterval(moveBlocksInterval);
-            }
-        }, 2000);
+    let moveBlocksInterval = undefined;
+        setTimeout(()=> positionBlock(), 0);
 
-    })
+    // создаем экземпляр наблюдателя
+    let observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if(mutation.type === 'attributes'){
+                if(container.classList.contains('show')){
 
+                    moveBlocksInterval = setInterval(()=> positionBlock(), 20000);
+
+                     }else {
+
+                     clearInterval(moveBlocksInterval);
+                     }
+                }
+           });
+       });
+
+    // настраиваем наблюдатель
+        let config = { attributes: true }
+
+    // передаем элемент и настройки в наблюдатель
+        observer.observe(container, config);
 
 }
 //---------------------------------------------------------------
