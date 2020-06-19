@@ -150,8 +150,6 @@ function container() {
     massBlocks();
     fillMain();
 
-                moveBlocksInterval = setInterval(()=> positionBlock(), 20000);
-            }else {
     let moveBlocksInterval = undefined;
         setTimeout(()=> positionBlock(), 0);
 
