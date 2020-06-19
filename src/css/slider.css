@@ -158,16 +158,24 @@
     /*}*/
     .downW{
         top: 0;
-        /*animation: 1.2s ease-in-out slidUp;*/
+        animation: 1.2s ease-in-out slidUp;
 
     }
     .upW{
         top: -100vh;
-        /*animation: 1s ease-in-out slidDown;*/
+        animation: 1s ease-in-out slidDown;
     }
     .slid3{
         box-shadow: inset 0px 0px 40px 10px rgba(18, 30, 62, 0.6) ;
 
+    }
+    .down{
+        animation: 1.5s ease-in-out slidDown;
+
+    }
+    .up{
+
+        animation: 1.2s ease-in-out slidUp;
     }
 }
 /*--------------------------------------------------------------*/
