@@ -79,14 +79,14 @@ const createTextForModalWindows = {
     textModalLanding : document.createTextNode('Ваши клиенты восновном любят ленту? Без проблем - лендинг, нет ограничений по длинне'),
     textModalGameSours : document.createTextNode('Вы придумали неккий интерактив для развлечения офисного планктона или просто любиделей интернет серфинга. Вам необходим сайт с кучей условий и функций для воплощения этого в жизнь? Да не проблема)'),
 
-    textButtonInternetShop : document.createTextNode('⨯'),
-    textButtonSiteCompany : document.createTextNode('⨯'),
-    textButtonBlog : document.createTextNode('⨯'),
-    textButtonPortfolio : document.createTextNode('⨯'),
-    textButtonSocialNetwork : document.createTextNode('⨯'),
-    textButtonForum : document.createTextNode('⨯'),
-    textButtonLanding : document.createTextNode('⨯'),
-    textButtonGameSours : document.createTextNode('⨯'),
+    // textButtonInternetShop : document.createTextNode('⨯'),
+    // textButtonSiteCompany : document.createTextNode('⨯'),
+    // textButtonBlog : document.createTextNode('⨯'),
+    // textButtonPortfolio : document.createTextNode('⨯'),
+    // textButtonSocialNetwork : document.createTextNode('⨯'),
+    // textButtonForum : document.createTextNode('⨯'),
+    // textButtonLanding : document.createTextNode('⨯'),
+    // textButtonGameSours : document.createTextNode('⨯'),
     // textButton : document.createTextNode('⨯'),
     
 }
@@ -144,7 +144,7 @@ function buildPage() {
     createElementsSlidWeOffer.modalWindowInternetShop.classList.add('modalWeOfffer', 'internetShop');
     createElementsSlidWeOffer.containerModalInternetShop.classList.add('containerWeOfffer');
     createElementsSlidWeOffer.buttonModalInternetShop.classList.add('internetShopButton');
-    createElementsSlidWeOffer.buttonModalInternetShop.appendChild(createTextForModalWindows.textButtonInternetShop);
+    // createElementsSlidWeOffer.buttonModalInternetShop.appendChild(createTextForModalWindows.textButtonInternetShop);
     createElementsSlidWeOffer.containerModalInternetShop.appendChild(createElementsSlidWeOffer.blockTextModalInternetShop);
     createElementsSlidWeOffer.containerModalInternetShop.appendChild(createElementsSlidWeOffer.buttonModalInternetShop);
     createElementsSlidWeOffer.blockTextModalInternetShop.appendChild(createTextForModalWindows.textModalInternetShop);
@@ -155,7 +155,7 @@ function buildPage() {
     createElementsSlidWeOffer.modalWindowSiteCompany.classList.add('modalWeOfffer', 'siteCompany');
     createElementsSlidWeOffer.containerModalSiteCompany.classList.add('containerWeOfffer');
     createElementsSlidWeOffer.buttonModalSiteCompany.classList.add('siteCompanyButton');
-    createElementsSlidWeOffer.buttonModalSiteCompany.appendChild(createTextForModalWindows.textButtonSiteCompany);
+    // createElementsSlidWeOffer.buttonModalSiteCompany.appendChild(createTextForModalWindows.textButtonSiteCompany);
     createElementsSlidWeOffer.containerModalSiteCompany.appendChild(createElementsSlidWeOffer.blockTextModalSiteCompany);
     createElementsSlidWeOffer.containerModalSiteCompany.appendChild(createElementsSlidWeOffer.buttonModalSiteCompany);
     createElementsSlidWeOffer.blockTextModalSiteCompany.appendChild(createTextForModalWindows.textModalSiteCompany);
@@ -166,7 +166,7 @@ function buildPage() {
     createElementsSlidWeOffer.modalWindowBlog.classList.add('modalWeOfffer', 'blog');
     createElementsSlidWeOffer.containerModalBlog.classList.add('containerWeOfffer');
     createElementsSlidWeOffer.buttonModalBlog.classList.add('blogButton');
-    createElementsSlidWeOffer.buttonModalBlog.appendChild(createTextForModalWindows.textButtonBlog);
+    // createElementsSlidWeOffer.buttonModalBlog.appendChild(createTextForModalWindows.textButtonBlog);
     createElementsSlidWeOffer.containerModalBlog.appendChild(createElementsSlidWeOffer.blockTextModalBlog);
     createElementsSlidWeOffer.containerModalBlog.appendChild(createElementsSlidWeOffer.buttonModalBlog);
     createElementsSlidWeOffer.blockTextModalBlog.appendChild(createTextForModalWindows.textModalBlog);
@@ -177,7 +177,7 @@ function buildPage() {
     createElementsSlidWeOffer.modalWindowPortfolio.classList.add('modalWeOfffer', 'portfolio');
     createElementsSlidWeOffer.containerModalPortfolio.classList.add('containerWeOfffer');
     createElementsSlidWeOffer.buttonModalPortfolio.classList.add('portfolioButton');
-    createElementsSlidWeOffer.buttonModalPortfolio.appendChild(createTextForModalWindows.textButtonPortfolio);
+    // createElementsSlidWeOffer.buttonModalPortfolio.appendChild(createTextForModalWindows.textButtonPortfolio);
     createElementsSlidWeOffer.containerModalPortfolio.appendChild(createElementsSlidWeOffer.blockTextModalPortfolio);
     createElementsSlidWeOffer.containerModalPortfolio.appendChild(createElementsSlidWeOffer.buttonModalPortfolio);
     createElementsSlidWeOffer.blockTextModalPortfolio.appendChild(createTextForModalWindows.textModalPortfolio);
@@ -188,7 +188,7 @@ function buildPage() {
     createElementsSlidWeOffer.modalWindowSocialNetwork.classList.add('modalWeOfffer', 'socialNetwork');
     createElementsSlidWeOffer.containerModalSocialNetwork.classList.add('containerWeOfffer');
     createElementsSlidWeOffer.buttonModalSocialNetwork.classList.add('socialNetworkButton');
-    createElementsSlidWeOffer.buttonModalSocialNetwork.appendChild(createTextForModalWindows.textButtonSocialNetwork);
+    // createElementsSlidWeOffer.buttonModalSocialNetwork.appendChild(createTextForModalWindows.textButtonSocialNetwork);
     createElementsSlidWeOffer.containerModalSocialNetwork.appendChild(createElementsSlidWeOffer.blockTextModalSocialNetwork);
     createElementsSlidWeOffer.containerModalSocialNetwork.appendChild(createElementsSlidWeOffer.buttonModalSocialNetwork);
     createElementsSlidWeOffer.blockTextModalSocialNetwork.appendChild(createTextForModalWindows.textModalSocialNetwork);
@@ -199,7 +199,7 @@ function buildPage() {
     createElementsSlidWeOffer.modalWindowForum.classList.add('modalWeOfffer', 'forum');
     createElementsSlidWeOffer.containerModalForum.classList.add('containerWeOfffer');
     createElementsSlidWeOffer.buttonModalForum.classList.add('forumButton');
-    createElementsSlidWeOffer.buttonModalForum.appendChild(createTextForModalWindows.textButtonForum);
+    // createElementsSlidWeOffer.buttonModalForum.appendChild(createTextForModalWindows.textButtonForum);
     createElementsSlidWeOffer.containerModalForum.appendChild(createElementsSlidWeOffer.blockTextModalForum);
     createElementsSlidWeOffer.containerModalForum.appendChild(createElementsSlidWeOffer.buttonModalForum);
     createElementsSlidWeOffer.blockTextModalForum.appendChild(createTextForModalWindows.textModalForum);
@@ -210,7 +210,7 @@ function buildPage() {
     createElementsSlidWeOffer.modalWindowLanding.classList.add('modalWeOfffer', 'landing');
     createElementsSlidWeOffer.containerModalLanding.classList.add('containerWeOfffer');
     createElementsSlidWeOffer.buttonModalLanding.classList.add('landingButton');
-    createElementsSlidWeOffer.buttonModalLanding.appendChild(createTextForModalWindows.textButtonLanding);
+    // createElementsSlidWeOffer.buttonModalLanding.appendChild(createTextForModalWindows.textButtonLanding);
     createElementsSlidWeOffer.containerModalLanding.appendChild(createElementsSlidWeOffer.blockTextModalLanding);
     createElementsSlidWeOffer.containerModalLanding.appendChild(createElementsSlidWeOffer.buttonModalLanding);
     createElementsSlidWeOffer.blockTextModalLanding.appendChild(createTextForModalWindows.textModalLanding);
@@ -221,7 +221,7 @@ function buildPage() {
     createElementsSlidWeOffer.modalWindowGameSours.classList.add('modalWeOfffer', 'gameSours');
     createElementsSlidWeOffer.containerModalGameSours.classList.add('containerWeOfffer');
     createElementsSlidWeOffer.buttonModalGameSours.classList.add('gameSoursButton');
-    createElementsSlidWeOffer.buttonModalGameSours.appendChild(createTextForModalWindows.textButtonGameSours);
+    // createElementsSlidWeOffer.buttonModalGameSours.appendChild(createTextForModalWindows.textButtonGameSours);
     createElementsSlidWeOffer.containerModalGameSours.appendChild(createElementsSlidWeOffer.blockTextModalGameSours);
     createElementsSlidWeOffer.containerModalGameSours.appendChild(createElementsSlidWeOffer.buttonModalGameSours);
     createElementsSlidWeOffer.blockTextModalGameSours.appendChild(createTextForModalWindows.textModalGameSours);

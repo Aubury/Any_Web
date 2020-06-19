@@ -87,7 +87,7 @@ img.sunWeOfffer {
     
 
 .blockSVG {
-    position : fixed;
+    position : absolute;
     left : 0%;
     width : 100%;
     height : 100%;
@@ -204,13 +204,13 @@ path {
 
 button {
     cursor : pointer;
-    background-color : rgb(244, 107, 28);
+    background : url('../../img/close_window.png');
+    background-size: contain;
     margin : 0 0 0 0;
     width : 50px;
     height : 50px;
-    border-radius : 50%;
-    font-size : 30px;
-    border : solid 1px black;
+    /* border-radius : 50%; */
+    border : solid 1px transparent;
     outline : none;
 }
 
