@@ -153,9 +153,9 @@
 }
 /*---------------------------------------------------------------*/
 @media screen and (max-width: 1100px){
-    .slid{
-        transition:  .6s linear;
-    }
+    /*.slid{*/
+    /*    transition:  .5s linear;*/
+    /*}*/
     .downW{
         top: 0;
         /*animation: 1.2s ease-in-out slidUp;*/
