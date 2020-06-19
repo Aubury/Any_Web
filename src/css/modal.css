@@ -32,9 +32,22 @@
 }
 .modalForm main{
     margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 .modalForm main p{
     margin: 20px auto;
+
+
+}
+.modalForm a{
+    text-decoration: underline;
+    color: #551a8b;
+}
+.modalForm span{
+    font-size: 1.1em;
 }
 .modalForm header, .modalForm footer {
     background: #c5c5c5;

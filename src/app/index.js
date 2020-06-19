@@ -367,9 +367,9 @@ function creatModalWindow() {
                             <h2>Свяжитесь с нами</h2>
                         </header>
                         <main>
-                            <p>Skype: _________________</p>
-                            <p>Vibe: __________________</p>
-                            <p>Telegram: ______________</p>
+                            <p><span>Social:</span><a href="https://www.facebook.com/AAnyWeb" target="_blank">  Facebook</a></p>
+                            <p><span>Email:</span><a href="#"> anywebpost@gmail.com</a></p>
+                            <p><span>Phone:</span><a href="#"> +38(098) 987-91-19</a> </p>
                         </main>
                         <footer>
                             <a class="btn">Закрыть</a>
