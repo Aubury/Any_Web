@@ -156,12 +156,12 @@
 
     .downW{
         top: 0;
-        transition: 1.2s linear !important;
+        transition: .6s linear !important;
 
     }
     .upW{
         top: -100vh;
-        transition:  1s linear !important;
+        transition:  .6s linear !important;
     }
     .slid3{
         box-shadow: inset 0px 0px 40px 10px rgba(18, 30, 62, 0.6) ;

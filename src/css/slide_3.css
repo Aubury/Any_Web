@@ -40,16 +40,16 @@
 }
 .block_1, .block_7, .block_8, .block_11,
 .block_12, .block_15, .block_16{
-    transition:  50s linear;
+    transition:  10s linear;
 }
 .block_2, .block_6, .block_10, .block_14{
-    transition:  40s linear;
+    transition:  10s linear;
 }
 .block_3, .block_5, .block_9, .block_13{
-    transition: 30s linear;
+    transition: 10s linear;
 }
 .block_4{
-    transition: 20s linear;
+    transition: 10s linear;
 }
 @media screen and (max-width: 1100px) {
     .block{

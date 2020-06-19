@@ -149,8 +149,22 @@ function container() {
     container.appendChild(main);
     massBlocks();
     fillMain();
-    setTimeout(()=> positionBlock(), 0);
-    setInterval(()=> positionBlock(), 40000);
+
+    let moveBlocksInterval = undefined,
+        moveBlockTimeOut= setTimeout(()=> positionBlock(), 0);
+
+    container.addEventListener('click',()=>{
+        setTimeout(()=>{
+            if(container.classList.contains('show')){
+                moveBlocksInterval = setInterval(()=> positionBlock(), 20000);
+            }else {
+                clearInterval(moveBlocksInterval);
+            }
+        }, 1500);
+
+    })
+
+
 }
 //---------------------------------------------------------------
 function positionCenter(valueScr, valueBl) {
