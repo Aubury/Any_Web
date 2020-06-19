@@ -127,17 +127,10 @@ function sliderGoDown(item) {
                     return false;
                 }else {
                     lastItemOfArr();
-                    if(item.id === 'Templates'){
-                        if(item.lastElementChild.scrollTop === 0){
-                            item.classList.remove('show', 'up');
-                            item.nextElementSibling.classList.remove('upW');
-                            item.nextElementSibling.classList.add('show');
-                        }
-                    }else {
                         item.classList.remove('show', 'downW');
                         item.nextElementSibling.classList.remove('upW');
                         item.nextElementSibling.classList.add('show', 'downW');
-                    }
+
                     return true;
                 }
 
