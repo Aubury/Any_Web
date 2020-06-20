@@ -10,16 +10,19 @@
     justify-items: center;
     position: absolute;
     font-family: 'Segoe Print Bold';
-    top: -120%;
+    top: -150%;
     width: 100vw;
-    height: 100vh;
+    /*height: 100vh;*/
+    height: calc(var(--vh, 1vh) * 100) !important;
     z-index: 9999;
     background: rgba(0,0,0,0.7);
+    transition:  0.4s linear;
+
 }
 .modalActive{
     top: 0 !important;
     position: fixed !important;
-    transition: all 0.4s linear;
+    transition:  0.4s linear;
 }
 
 .modalForm{
