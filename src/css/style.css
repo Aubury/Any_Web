@@ -63,5 +63,15 @@ h2{
     h2{
         font-size: 1.7em !important;
     }
+    .menu-btn {
+
+        background-size: 30px 40px;
+    }
+}
+/*-------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: 500px) {
+    h2 {
+        font-size: 1.6em !important;
+    }
 }
 

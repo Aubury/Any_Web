@@ -45,13 +45,13 @@
     
 
     .modalWeOfffer>.containerWeOfffer {
-        width : 70%;
+        width : 90%;
         flex-wrap : wrap;
     }
 
     button {
-        width : 35px;
-        height : 35px;
+        /*width : 35px;*/
+        /*height : 35px;*/
         font-size : 20px;
     }
 

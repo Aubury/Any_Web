@@ -3,4 +3,9 @@
     img.sunWeOfffer {
         top : 50px;
     }
+    .modalWeOfffer>.containerWeOfffer {
+        width : 90%;
+        flex-wrap : wrap;
+        /* flex-direction: column-reverse; */
+    }
 }

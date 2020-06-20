@@ -199,19 +199,23 @@ path {
     width : 60%;
     display : flex;
     flex-wrap : nowrap;
+    position: relative;
 }
 
 
 button {
     cursor : pointer;
-    background : url('../../img/close_window.png');
+    background : url('../../img/close_window.png') no-repeat;
     background-size: contain;
     margin : 0 0 0 0;
-    width : 50px;
-    height : 50px;
+    width : 30px;
+    height : 30px;
     /* border-radius : 50%; */
     border : solid 1px transparent;
     outline : none;
+    position: absolute;
+    top: -10px;
+    left: 85%;
 }
 
 

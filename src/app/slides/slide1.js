@@ -142,16 +142,12 @@ function words() {
                let span = document.createElement('span');
                    span.innerHTML = `${massWords[index]}`;
                    div.appendChild(span);
-                   // span.style.left = num + '%';
-                   // span.style.top = '110%';
 
                    span.classList.add('moveW');
 
                setTimeout(()=>{span.remove();},10000);
 
            }
-
-    // span.style.transform = `rotate(${num}deg)`;
 
 }
 
