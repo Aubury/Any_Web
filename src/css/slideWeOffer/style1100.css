@@ -33,19 +33,19 @@
     /* ====================== modal windows ============================== */
     
     
-    .modalWeOfffer {
-        justify-content : flex-start;
-        align-items : flex-start;
-    }
+    /*.modalWeOfffer {*/
+    /*    justify-content : flex-start;*/
+    /*    align-items : flex-start;*/
+    /*}*/
     
 
     .modalWeOfffer>.containerWeOfffer {
         width : 80%;
         flex-wrap : wrap;
         padding: 0 0 0 0;
-        margin-top: 50%;
-        margin-right: auto;
-        margin-left: auto;
+        /*margin-top: 50%;*/
+        /*margin-right: auto;*/
+        /*margin-left: auto;*/
     }
 
 
@@ -67,22 +67,26 @@
     }    
 }
 @media screen and  ( orientation: landscape) and (max-width: 1100px){
-    .modalWeOfffer>.containerWeOfffer {
-        margin-top: 20% !important;
-        margin-right: auto;
-        margin-left: auto;
+    .modalWeOfffer {
+        height: 60% !important;
     }
+
+    /*.modalWeOfffer>.containerWeOfffer {*/
+    /*    margin-top: 20% !important;*/
+    /*    margin-right: auto;*/
+    /*    margin-left: auto;*/
+    /*}*/
     button{
         width: 20px;
         height: 20px;
     }
 }
 @media screen and  ( orientation: landscape) and (max-width: 900px){
-    .modalWeOfffer>.containerWeOfffer {
-        margin-top: 5% !important;
-        margin-right: auto;
-        margin-left: auto;
-    }
+    /*.modalWeOfffer>.containerWeOfffer {*/
+    /*    margin-top: 5% !important;*/
+    /*    margin-right: auto;*/
+    /*    margin-left: auto;*/
+    /*}*/
     button{
         width: 20px !important;
         height: 20px !important;

@@ -177,7 +177,7 @@
     }
 }
 /*--------------------------------------------------------------*/
-@media screen and (max-width: 900px) and (orientation: landscape) {
+@media screen and (orientation: landscape) and (max-width: 900px)  {
     .divArrowDown{
         top: calc(100% - 4em - 1em);
     }

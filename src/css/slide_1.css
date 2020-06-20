@@ -243,13 +243,13 @@
     animation: 6s linear moveWords;
 }
 /*-------------------------------------------------------------*/
-@media screen and (max-width: 1050px) and (orientation: landscape){
+@media screen and (orientation: landscape) and (max-width: 1050px) {
    .blockCat{
      width: 40% !important;
    }
 }
 /*-------------------------------------------------------------*/
-@media screen and (max-width: 825px) and (orientation: landscape){
+@media screen and (orientation: landscape) and (max-width: 825px)  {
     .mainDiv{
         width: 70%;
         left: calc((100% - 70%)/2);
@@ -259,7 +259,7 @@
         line-height: 60px !important;
     }
     h2{
-        font-size: 2.5em !important;
+        font-size: 1.8em !important;
     }
     .blockMoon img {
         width: 50%;
@@ -382,7 +382,7 @@
     }
 }
 /*---------------------------------------------------------------*/
-@media screen and (max-width: 570px) and (orientation: landscape) {
+@media screen and (orientation: landscape) and (max-width: 570px)   {
     .wordsBlock{
         width: 20%;
         left: calc(100% - 20%);

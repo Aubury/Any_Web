@@ -35,10 +35,10 @@
     /* ====================== modal windows ============================== */
     
     
-    .modalWeOfffer {
-        justify-content : flex-start;
-        align-items : flex-start;
-    }
+    /*.modalWeOfffer {*/
+    /*    justify-content : flex-start;*/
+    /*    align-items : flex-start;*/
+    /*}*/
     
 
     .modalWeOfffer>.containerWeOfffer {
@@ -53,6 +53,7 @@
         /*width : 40px;*/
         /*height : 40px;*/
         font-size : 25px;
+        left: 90%;
     }
 
 

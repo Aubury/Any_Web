@@ -43,10 +43,10 @@
     /* ====================== modal windows ============================== */
     
 
-    .modalWeOfffer {
-        justify-content : flex-start;
-        align-items : flex-start;
-    }
+    /*.modalWeOfffer {*/
+    /*    justify-content : flex-start;*/
+    /*    align-items : flex-start;*/
+    /*}*/
     
 
     .modalWeOfffer>.containerWeOfffer {
@@ -58,8 +58,8 @@
 
     button {
         margin: 10px 0 0 10px;
-        width: 35px;
-        height: 35px;
+        /*width: 35px;*/
+        /*height: 35px;*/
         border-radius: 50%;
         font-size: 20px;
     }

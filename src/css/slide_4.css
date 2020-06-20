@@ -31,7 +31,7 @@
 /*    top: 5%;*/
 /*}*/
 /*----------------------------------------------------------*/
-@media screen and (max-width: 1400px) and (orientation: landscape) {
+@media screen and (orientation: landscape) and (max-width: 1400px)   {
     .template {
         width: calc((100% / 3) - 2%);
         height: 15em;
@@ -59,7 +59,7 @@
     }
 }
 /*---------------------------------------------------------------*/
-@media screen and (max-width: 1050px) and (orientation: landscape) {
+@media screen and (orientation: landscape) and (max-width: 1050px)   {
     .main{
         overflow-y: scroll;
         -webkit-overflow-scrolling:touch !important;
@@ -80,7 +80,7 @@
 
 }
 /*-----------------------------------------------------------*/
-@media screen and (max-width: 740px)  and (orientation: landscape){
+@media screen and (orientation: landscape) and (max-width: 740px)  {
     .template{
         width: 35em;
         height: 17em;
@@ -88,7 +88,7 @@
 
 }
 /*-----------------------------------------------------------*/
-@media screen and (max-width: 700px)  and (orientation: landscape){
+@media screen and (orientation: landscape) and (max-width: 700px)   {
     .template{
         width: 35em;
         height: 17em;

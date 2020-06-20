@@ -38,10 +38,10 @@
     /* ====================== modal windows ============================== */
     
     
-    .modalWeOfffer {
-        justify-content : flex-start;
-        align-items : flex-start;
-    }
+    /*.modalWeOfffer {*/
+    /*    justify-content : flex-start;*/
+    /*    align-items : flex-start;*/
+    /*}*/
     
 
     .modalWeOfffer>.containerWeOfffer {

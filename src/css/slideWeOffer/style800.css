@@ -32,11 +32,14 @@
     }
 }
 @media screen and  ( orientation: landscape) and (max-width: 800px){
-    .modalWeOfffer>.containerWeOfffer {
-        margin-top: 5% !important;
-        margin-right: auto;
-        margin-left: auto;
+    .modalWeOfffer {
+        height: 60% !important;
     }
+    /*.modalWeOfffer>.containerWeOfffer {*/
+    /*    margin-top: 5% !important;*/
+    /*    margin-right: auto;*/
+    /*    margin-left: auto;*/
+    /*}*/
     button{
         width: 20px !important;
         height: 20px !important;
