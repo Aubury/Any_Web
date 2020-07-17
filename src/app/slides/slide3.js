@@ -11,7 +11,8 @@ import Temp_9 from '../../img/anyW4Ytmpl.jpg';
 import Temp_10 from '../../img/cosm.jpg';
 import Temp_11 from '../../img/destiny.jpg';
 import Temp_12 from '../../img/proudandpunch.jpg';
-import Temp_13 from '../../img/rainforestfoods.jpg'
+import Temp_13 from '../../img/rainforestfoods.jpg';
+import Close_icon from '../../img/close_tr.png';
 
 const obj = {
     slide : document.createElement('div'),
@@ -19,7 +20,8 @@ const obj = {
     massImg: [Temp_1, Temp_2, Temp_3, Temp_4, Temp_5, Temp_6, Temp_7, Temp_8, Temp_9, Temp_10,
               Temp_11, Temp_12, Temp_13],
     massBlocks : [],
-
+    moveBlocksInterval : null,
+    flag : true
 }
 //-------------------------------------------------------------
 function sizeBlock(size) {
@@ -40,16 +42,7 @@ function sizeScreen() {
     return size;
 }
 //----------------------------------------------------------
-// function newHeight(parent) {
-//     let height = parent.clientHeight;
-//     if(window.screen.width < 900)
-//     {
-//         height = parent.clientWidth/2;
-//     }else {
-//         height = parent.clientWidth/3
-//     }
-//     return Math.round(Math.random()*(height - height/3) + height/3);
-// }
+
 //--------------------------------------------------------------
 function newWidth(parent) {
     let width = 0;
@@ -67,7 +60,33 @@ function createBlock( type, size, ...classes) {
         block.classList.add(...classes);
         return block;
 }
+// -----------------------------------------------------------
+function addListener() {
+  obj.massBlocks.forEach( el => el.onclick = focus);
+}
+         //---------------------------
+function  stopListener() {
+    obj.massBlocks.forEach( el => el.onclick = null);
+}
+        //----------------------------
+function  Interval() {
+    obj.flag = true;
+    obj.moveBlocksInterval = setInterval(()=>{
+        if(obj.slide.classList.contains('show')){
+            if(obj.main.classList.contains('stop-blocks')){
+                obj.moveBlocksInterval = clearInterval(obj.moveBlocksInterval);
+            }else {
+                positionBlock();
+            }
+        }
 
+    }, 30000);
+}
+       //--------------------------
+function stopInterval() {
+    obj.flag = false;
+    obj.moveBlocksInterval = clearInterval(obj.moveBlocksInterval);
+}
 //--------------------------------------------------------------
 function massBlocks() {
    let size = sizeScreen(),
@@ -84,27 +103,26 @@ function massBlocks() {
             img.width = sizeBlock(size);
             div = createBlock('div', size, 'block',`block_${i+1}`);
             div.appendChild(img);
-            div.addEventListener('click', focus);
             obj.massBlocks.push(div);
     }
-
+   addListener();
 }
 //---------------------------------------------------------------
 function newPositionTop(el) {
     let parent = el.offsetParent,
         elH = el.offsetHeight,
         prH = parent.offsetHeight,
-        endPoint = prH - elH;
+        endPoint = (prH - elH) - 10;
 
-    return Math.round(Math.random()*(endPoint - 1 + 1) + 1);
+    return Math.round(Math.random()*(endPoint - 10 + 10) + 10);
 }
 //---------------------------------------------------------------
 function newPositionLeft(el) {
     let parent = el.offsetParent,
         elW = el.offsetWidth,
         prW = parent.offsetWidth,
-        endPoint = prW - elW;
-    return Math.round(Math.random()*(endPoint - 1 + 1) + 1);
+        endPoint = (prW - elW) - 10;
+    return Math.round(Math.random()*(endPoint - 10 + 10) + 10);
 }
 //---------------------------------------------------------------
 function zIndex() {
@@ -115,11 +133,11 @@ function zIndex() {
     let mass = obj.massBlocks;
 
     mass.forEach(el=>{
+        // el.firstElementChild.style.width = newWidth(el.parentElement) +'px';
         el.style.top = newPositionTop(el) + 'px';
         el.style.left = newPositionLeft(el) + 'px';
         el.style.zIndex = zIndex();
-        el.firstElementChild.style.width = newWidth(el.parentElement) +'px';
-        el.style.position = 'absolute';
+         el.style.position = 'absolute';
     })
 }
 //--------------------------------------------------------
@@ -133,9 +151,12 @@ function  fillMain() {
 }
 // -------------------------------------------------------
 function container() {
-    const container = obj.slide,
+    let container = obj.slide,
         main = obj.main,
-        name = document.createElement('h2');
+        name = document.createElement('h2'),
+        mass = obj.massBlocks,
+        flag = false;
+
 
 
     container.classList.add('slid', 'slid3');
@@ -150,21 +171,18 @@ function container() {
     massBlocks();
     fillMain();
 
-    let moveBlocksInterval = undefined;
-        setTimeout(()=> positionBlock(), 0);
+
+    setTimeout(()=> positionBlock(), 0);
 
     // создаем экземпляр наблюдателя
     let observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
             if(mutation.type === 'attributes'){
-                if(container.classList.contains('show')){
-
-                    moveBlocksInterval = setInterval(()=> positionBlock(), 20000);
-
-                     }else {
-
-                     clearInterval(moveBlocksInterval);
-                     }
+                if(container.classList.contains('show') && obj.flag){
+                    if(obj.moveBlocksInterval === null){
+                        Interval();
+                       }
+                   }
                 }
            });
        });
@@ -183,25 +201,67 @@ function positionCenter(valueScr, valueBl) {
 
 //----------------------------------------------------------------
 function focus(ev) {
-    let el = ev.target,
-        parent = el.parentElement,
-        docWidth = parent.parentElement.clientWidth,
-        docHeight = parent.parentElement.clientHeight,
-        size = undefined;
+    console.log(ev.target);
+    if(ev.target.parentElement.classList.contains('block')){
 
-     el.clientWidth > el.clientHeight ? size = docWidth/1.5 : size = docHeight-20;
+        stopInterval();
 
-    el.clientWidth > el.clientHeight ? el.style.width = Math.ceil(size) + 'px' :
-        (el.style.height = Math.ceil(size) + 'px', el.classList.add('blockCenter'));
-    parent.style.zIndex = 20;
-    parent.classList.add('transition');
-    parent.style.left = positionCenter(docWidth, el.clientWidth) + 'px';
-    parent.style.top = positionCenter(docHeight, el.clientHeight) + 'px';
-    setTimeout(()=>{
-        positionBlock();
-        parent.classList.remove('transition');
-        el.classList.remove('blockCenter');
-    },5000);
+        const el = ev.target,
+            parent = el.parentElement,
+            main_parent = obj.main,
+            docWidth = main_parent.clientWidth,
+            docHeight = main_parent.clientHeight,
+            close_icon = new Image(),
+            top  = parent.style.top.substr(0, parent.style.top.length-2),
+            left = parent.style.left.substr(0, parent.style.left.length-2),
+            width = parent.clientWidth,
+            height = parent.clientHeight;
+
+        let size = undefined;
+
+        stopListener();
+
+        close_icon.src = Close_icon;
+        close_icon.style.width = 20 + 'px';
+        close_icon.style.height = 20 + 'px';
+
+        el.clientWidth > el.clientHeight ? size = docWidth - 50 : size = docHeight - 20;
+
+        el.clientWidth > el.clientHeight ? (el.style.width = size + 'px', el.style.height = 'auto' ):
+            (el.style.height = size + 'px', el.style.width = 'auto');
+        parent.style.zIndex = '20';
+        parent.classList.add('transition');
+        main_parent.classList.add('stop-blocks');
+        parent.style.left = positionCenter(docWidth, el.clientWidth) + 'px';
+        parent.style.top = positionCenter(docHeight, el.clientHeight) + 'px';
+
+        close_icon.style.position = 'absolute';
+        close_icon.style.top = 10 + 'px';
+        close_icon.style.left = (parent.clientWidth - 30) + 'px';
+        close_icon.style.cursor = 'point';
+        parent.appendChild(close_icon);
+
+        close_icon.addEventListener('click', ()=>{
+
+            parent.style.left = left + 'px';
+            parent.style.top = top + 'px';
+            el.style.width = width + 'px';
+            el.style.height = height + 'px';
+            parent.style.zIndex = null;
+            parent.classList.remove('transition');
+            main_parent.classList.remove('stop-blocks');
+            parent.removeChild(close_icon);
+            parent.classList.remove('transition');
+            main_parent.classList.remove('stop-blocks');
+            setTimeout(()=> positionBlock(), 500);
+            Interval();
+            addListener();
+
+        });
+    }
+
+
+
 }
 
 container();
