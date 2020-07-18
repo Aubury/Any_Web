@@ -202,7 +202,7 @@ function positionCenter(valueScr, valueBl) {
 //----------------------------------------------------------------
 function focus(ev) {
     console.log(ev.target);
-    if(ev.target.parentElement.classList.contains('block')){
+    if(!ev.target.classList.contains('close-icon') && ev.target.parentElement.classList.contains('block')){
 
         stopInterval();
 
@@ -238,6 +238,7 @@ function focus(ev) {
         close_icon.style.position = 'absolute';
         close_icon.style.top = 10 + 'px';
         close_icon.style.left = (parent.clientWidth - 30) + 'px';
+        close_icon.classList.add('close-icon');
         close_icon.style.cursor = 'point';
         parent.appendChild(close_icon);
 
